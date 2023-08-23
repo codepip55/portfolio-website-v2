@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/scss/typography.scss';
+@import './assets/scss/scrollbar.scss';
+
+html {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.fadein-animation {
+  -webkit-animation: fadein 0.3s; // Safari, Chrome, Opera
+  -moz-animation: fadein 0.3s; // Firefox
+  -ms-animation: fadein 0.3s; // Internet Explorer
+  -o-animation: fadein 0.3s; // Opera
+  animation: fadein 0.3s;
+}
+
+.text-selectable {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Firefox
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Safari, Chrome, Opera
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Internet Explorer
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Opera
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

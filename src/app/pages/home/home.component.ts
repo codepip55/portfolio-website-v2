@@ -37,4 +37,12 @@ export class HomeComponent implements OnInit {
     this.loading = false;
   }
 
+  scrollToBottom(): void {
+    window.scrollTo({
+      left: 0,
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  }
+
 }

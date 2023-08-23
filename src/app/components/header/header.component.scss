@@ -1,3 +1,6 @@
+.logo {
+  cursor: pointer;
+}
 .logo .black {
   display: none;
 }
@@ -12,25 +15,21 @@
   -o-animation: hover-logo 0.5s ease-in-out; // Opera
   animation: hover-logo 0.5s ease-in-out;
 }
-
 .logo:hover .black {
   display: block;
 }
 .logo:hover .white {
   display: none;
 }
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .navbar .nav-links {
   font-size: 18px;
   font-weight: 500;
 }
-
 .nav-link {
   text-transform: uppercase;
   text-decoration: none;
@@ -41,11 +40,9 @@
   opacity: 0.75;
   cursor: pointer;
 }
-
 .nav-link:hover {
   opacity: 1;
 }
-
 .nav-link::before {
   transition: 300ms;
   height: 5px;
@@ -55,11 +52,9 @@
   width: 0%;
   bottom: 10px;
 }
-
 .nav-link:hover::before {
   width: 100%;
 }
-
 // Hover Animation
 @keyframes hover-logo {
   from { opacity: 0; }

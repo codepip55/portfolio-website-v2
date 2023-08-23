@@ -1,0 +1,82 @@
+.page {
+  height: 100vh;
+  position: relative;
+}
+
+.content {
+  display: inline-block;
+
+  > h1, p {
+    margin: 0;
+  }
+
+  > h1 {
+    font-size: 64px;
+  }
+
+  > p {
+    font-size: 14px;
+    color: #888a8f;
+    width: 0;
+    min-width: 100%;
+  }
+}
+
+.vertical-align {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.my-work {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  > p {
+    font-size: 20px;
+  }
+}
+
+.my-work .animation {
+  margin: -17px 0 0 0;
+  -webkit-animation: arrow-animation 2s ease-in-out 0s infinite; // Safari, Chrome, Opera
+  -moz-animation: arrow-animation 2s ease-in-out 0s infinite; // Firefox
+  -ms-animation: arrow-animation 2s ease-in-out 0s infinite; // Internet Explorer
+  -o-animation: arrow-animation 2s ease-in-out 0s infinite; // Opera
+  animation: arrow-animation 2s ease-in-out 0s infinite;
+}
+
+@keyframes arrow-animation {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(5px);}
+  100% { transform: translateY(0px);}
+}
+// Firefox
+@-moz-keyframes hover-logo {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(5px);}
+  100% { transform: translateY(0px);}
+}
+// Safari, Chrome, Opera
+@-webkit-keyframes hover-logo {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(5px);}
+  100% { transform: translateY(0px);}
+}
+// Internet Explorer
+@-ms-keyframes hover-logo {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(5px);}
+  100% { transform: translateY(0px);}
+}
+// Opera
+@-o-keyframes hover-logo {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(5px);}
+  100% { transform: translateY(0px);}
+}

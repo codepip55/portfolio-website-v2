@@ -1,0 +1,87 @@
+.logo .black {
+  display: none;
+}
+.logo .white {
+  display: block;
+  
+}
+.logo .black, .white {
+  -webkit-animation: hover-logo 0.5s ease-in-out; // Safari, Chrome, Opera
+  -moz-animation: hover-logo 0.5s ease-in-out; // Firefox
+  -ms-animation: hover-logo 0.5s ease-in-out; // Internet Explorer
+  -o-animation: hover-logo 0.5s ease-in-out; // Opera
+  animation: hover-logo 0.5s ease-in-out;
+}
+
+.logo:hover .black {
+  display: block;
+}
+.logo:hover .white {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .nav-links {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 20px 0px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: #031D44;
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+// Hover Animation
+@keyframes hover-logo {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+// Firefox
+@-moz-keyframes hover-logo {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+// Safari, Chrome, Opera
+@-webkit-keyframes hover-logo {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+// Internet Explorer
+@-ms-keyframes hover-logo {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+// Opera
+@-o-keyframes hover-logo {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

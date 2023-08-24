@@ -1,48 +1,54 @@
-<div class="page">
-  <app-header></app-header>
+<ng-container *ngIf="!loading; else loader">
+  <div class="page">
+    <div class="vertical-align">
+      <div class="content">
+        <h1 class="title">{{ homeData.name }}</h1>
+        <p class="description">{{ homeData.title }}</p>
+      </div>
+    </div>
+  
+    <div class="my-work" (click)="scrollToBottom()">
+      <p>My Experience</p>
+      <img src="assets/svg/arrowDown.svg" class="animation">
+    </div>
+  </div>
+  
+  <div class="page">
+    <div class="hover-area">
+      <div class="card">
+        <ul class="card-content">
+          <li>Dummy</li>
+          <li>Placeholder</li>
+          <li>Text</li>
+        </ul>
+        <p>Frontend</p>
+      </div>
+    </div>
+    <div class="hover-area">
+      <div class="card">
+        <ul class="card-content">
+          <li>Dummy</li>
+          <li>Placeholder</li>
+          <li>Text</li>
+        </ul>
+        <p>Database</p>
+      </div>
+    </div>
+    <div class="hover-area">
+      <div class="card">
+        <ul class="card-content">
+          <li>Dummy</li>
+          <li>Placeholder</li>
+          <li>Text</li>
+        </ul>
+        <p>Backend</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
 
-  <div class="vertical-align">
-    <div class="content">
-      <h1 class="title">{{ homeData.name }}</h1>
-      <p class="description">{{ homeData.title }}</p>
-    </div>
+<ng-template #loader>
+  <div class="loader">
+    <app-spinner></app-spinner>
   </div>
-
-  <div class="my-work" (click)="scrollToBottom()">
-    <p>My Experience</p>
-    <img src="assets/svg/arrowDown.svg" class="animation">
-  </div>
-</div>
-
-<div class="page">
-  <div class="hover-area">
-    <div class="card">
-      <ul class="card-content">
-        <li>Dummy</li>
-        <li>Placeholder</li>
-        <li>Text</li>
-      </ul>
-      <p>Frontend</p>
-    </div>
-  </div>
-  <div class="hover-area">
-    <div class="card">
-      <ul class="card-content">
-        <li>Dummy</li>
-        <li>Placeholder</li>
-        <li>Text</li>
-      </ul>
-      <p>Database</p>
-    </div>
-  </div>
-  <div class="hover-area">
-    <div class="card">
-      <ul class="card-content">
-        <li>Dummy</li>
-        <li>Placeholder</li>
-        <li>Text</li>
-      </ul>
-      <p>Backend</p>
-    </div>
-  </div>
-</div>
+</ng-template>

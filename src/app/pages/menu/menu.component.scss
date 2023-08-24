@@ -13,12 +13,22 @@
   position: relative;
   display: flex;
   justify-items: center;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
+  width: fit-content;
+  > p {
+    margin: 0 50px;
+  }
 }
 .menu > ul > li .box {
   position: absolute;
-  left: 50px;
+  left: 0px;
   background-color: black;
+  opacity: 50%;
   height: 125px;
-  width: 500px;
+  width: 450px;
+  transition: all ease-in-out 0.25s;
+  cursor: pointer;
+}
+.menu > ul > li:hover .box {
+  left: 100px;
 }

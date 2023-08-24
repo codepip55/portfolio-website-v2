@@ -10,6 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './pages/menu/menu.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { MenuComponent } from './pages/menu/menu.component';
     HomeComponent,
     HeaderComponent,
     ScrollToTopComponent,
-    MenuComponent
+    MenuComponent,
+    NotFoundComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

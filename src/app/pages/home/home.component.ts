@@ -34,6 +34,11 @@ export class HomeComponent implements OnInit {
       }
     })
 
+    const languages = this.strapiService.getLanguages().subscribe((res) => {
+      // @ts-ignore
+      console.log(res['data'])
+    })
+
     this.loading = false;
   }
 

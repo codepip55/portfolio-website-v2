@@ -1,0 +1,11 @@
+<div class="modal" [ngStyle]="{ 'max-width': maxWidth }">
+  <div class="modal-outside">
+    <div class="mask">
+      <div @opacity class="mask-bg modal-bg"></div>
+    </div>
+    <span class="divider">​</span>
+    <div @opacityScale class="content" [ngStyle]="{ 'max-width': maxWidth }">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

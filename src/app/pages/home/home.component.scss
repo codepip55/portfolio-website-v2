@@ -118,6 +118,45 @@
 .card-content > li:hover::before {
   width: 100%;
 }
+.modal-wrapper {
+  background-color: white;
+  color: black;
+  padding: 1.25rem;
+  text-align: left;
+}
+.modal-language {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-transform: uppercase;
+}
+.modal-wrapper .projects {
+  margin-top: 1.25rem;
+}
+.modal-wrapper .projects .title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.modal-wrapper .projects .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.modal-wrapper .projects .projects-grid .project-card {
+  border-radius: 10px;
+  padding: 0.5rem;
+  position: relative;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-neutral);
+  transition-property: border;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.modal-wrapper .projects .projects-grid .project-card:hover {
+  border-bottom: 1px solid var(--color-gray);
+}
+
 @keyframes arrow-animation {
   0% { transform: translateY(0px); }
   50% { transform: translateY(5px);}

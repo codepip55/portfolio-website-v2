@@ -16,7 +16,7 @@
   <div class="hover-area">
     <div class="card">
       <ul class="card-content">
-        <li *ngFor="let language of frontend">{{ language.name }}</li>
+        <li *ngFor="let language of frontend" (click)="open('language-info', language.slug)">{{ language.name }}</li>
       </ul>
       <p>Frontend</p>
     </div>
@@ -24,7 +24,7 @@
   <div class="hover-area">
     <div class="card">
       <ul class="card-content">
-        <li *ngFor="let language of database">{{ language.name }}</li>
+        <li *ngFor="let language of database" (click)="open('language-info', language.slug)">{{ language.name }}</li>
       </ul>
       <p>Database</p>
     </div>
@@ -32,9 +32,34 @@
   <div class="hover-area">
     <div class="card">
       <ul class="card-content">
-        <li *ngFor="let language of backend">{{ language.name }}</li>
+        <li *ngFor="let language of backend" (click)="open('language-info', language.slug)">{{ language.name }}</li>
       </ul>
       <p>Backend</p>
     </div>
   </div>
 </div>
+
+<app-modal id="language-info" size="xl">
+  <div class="modal-wrapper">
+    <div>
+      <div class="modal-language">
+        {{ language }}
+      </div>
+      <div>
+        {{ description }}
+      </div>
+    </div>
+    <div class="projects" *ngIf="projects.length > 0">
+      <div class="title">Projects</div>
+      <div class="projects-grid">
+        <ng-container *ngFor="let project of projects">
+          <div class="project-card">
+            <a (click)="project.link ? openLink(project.link) : preventDefault()" [ngStyle]="{ 'cursor': project.link ? 'pointer' : '' }">
+              <div>{{ project.title }}</div>
+            </a>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</app-modal>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { HomeData } from 'src/app/models/homeData';
 import { LanguageData } from 'src/app/models/languageData';
-import { StrapiService } from 'src/app/services/strapi.service';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { StrapiService } from 'src/app/services/strapi.service';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private strapiService: StrapiService
+    private modalService: ModalService
   ) { }
 
   homeData: HomeData;
@@ -19,6 +20,14 @@ export class HomeComponent implements OnInit {
   frontend: LanguageData[] = [];
   backend: LanguageData[] = [];
   database: LanguageData[] = [];
+
+  language: string;
+  description: string;
+  projects: {
+    id: number,
+    title: string,
+    link: string;
+  }[] = [];
 
   async ngOnInit(): Promise<void> {
     let home = JSON.parse(window.localStorage.getItem('homeData')!)
@@ -50,6 +59,24 @@ export class HomeComponent implements OnInit {
       top: document.body.scrollHeight,
       behavior: 'smooth'
     });
+  }
+
+  async open(id: string, language: string) {
+    const lang = this.languageData.map(e => e.name).indexOf(language)
+
+    this.language = this.languageData[lang].name
+    this.description = this.languageData[lang].description
+    this.projects = this.languageData[lang].projects
+
+    this.modalService.open(id);
+  }
+
+  openLink(link: string) {
+    window.open(link)
+  }
+
+  preventDefault() {
+    console.log('No Link found')
   }
 
 }

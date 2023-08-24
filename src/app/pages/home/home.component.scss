@@ -8,7 +8,7 @@
     margin: 0;
   }
   > h1 {
-    font-size: 64px;
+    font-size: 48px;
     color: black;
   }
   > p {
@@ -16,6 +16,11 @@
     color: var(--color-gray);
     width: 0;
     min-width: 100%;
+  }
+}
+@media (min-width: 640px) {
+  .content > h1 {
+    font-size: 65px;
   }
 }
 .vertical-align {
@@ -85,6 +90,15 @@
   justify-items: start;
   flex-direction: column;
   width: 100%;
+  font-size: 10px;
+}
+@media (min-width: 640px) {
+  .card-content {
+    font-size: 20px;
+    > li {
+      margin: 0 20px;
+    }
+  }
 }
 .hover-area:hover .card-content {
   display: flex;
@@ -96,7 +110,7 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 20px 0px;
-  margin: 0px 20px;
+  margin: 0 -20px;
   display: block;
   position: relative;
   opacity: 0.75;

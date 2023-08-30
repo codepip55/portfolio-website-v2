@@ -1,17 +1,18 @@
 .page {
   height: 100vh;
   position: relative;
+  inset: 0;
 }
 .content {
   display: inline-block;
-  > h1, p {
+  h1, p {
     margin: 0;
   }
-  > h1 {
+  h1 {
     font-size: 48px;
     color: black;
   }
-  > p {
+  p {
     font-size: 14px;
     color: var(--color-gray);
     width: 0;
@@ -19,7 +20,7 @@
   }
 }
 @media (min-width: 640px) {
-  .content > h1 {
+  .content h1 {
     font-size: 65px;
   }
 }
@@ -37,11 +38,12 @@
   flex-direction: column;
   width: 100%;
   cursor: pointer;
-  > p {
+  p {
     font-size: 20px;
   }
 }
 .my-work .animation {
+  width: 40px;
   margin: -17px 0 0 0;
   -webkit-animation: arrow-animation 2s ease-in-out 0s infinite; // Safari, Chrome, Opera
   -moz-animation: arrow-animation 2s ease-in-out 0s infinite; // Firefox
@@ -95,7 +97,7 @@
 @media (min-width: 640px) {
   .card-content {
     font-size: 20px;
-    > li {
+    li {
       margin: 0 20px;
     }
   }
@@ -104,7 +106,7 @@
   display: flex;
   opacity: 1;
 }
-.card-content > li {
+.card-content li {
   padding-top: 10px;
   list-style: none;
   text-transform: uppercase;
@@ -117,10 +119,10 @@
   cursor: pointer;
   width: fit-content;
 }
-.card-content > li:hover {
+.card-content li:hover {
   opacity: 1;
 }
-.card-content > li::before {
+.card-content li::before {
   transition: 300ms;
   height: 5px;
   content: "";
@@ -129,7 +131,7 @@
   width: 0%;
   bottom: 10px;
 }
-.card-content > li:hover::before {
+.card-content li:hover::before {
   width: 100%;
 }
 .modal-wrapper {

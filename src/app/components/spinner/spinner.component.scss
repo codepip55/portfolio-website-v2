@@ -1,54 +1,51 @@
 .bars {
   margin: 20px 0;
   display: flex;
-}
-.bars .bar-bg {
-  height: 60px;
-  width: 10px;
-  background-color: var(--color-neutral);
-  display: flex;
-  margin: 0 1px;
-  border-radius: 9999px;
-  position: relative;
-}
-.bars .bar-bg > div {
-  position: absolute;
-  height: 0;
-  width: 100%;
-  background-color: var(--color-primary);
-  border-radius: 9999px;
-  bottom: 0;
-}
-.bars .bar-bg .b1 {
-  animation: bar1-animation 1.5s linear 0s infinite;
-  -webkit-animation: bar1-animation 1.5s linear 0s infinite; // Safari, Chrome, Opera
-  -moz-animation: bar1-animation 1.5s linear 0s infinite; // Firefox
-  -ms-animation: bar1-animation 1.5s linear 0s infinite; // Internet Explorer
-  -o-animation: bar1-animation 1.5s linear 0s infinite; // Opera
-}
-.bars .bar-bg .b2 {
-  animation: bar2-animation 1.5s linear 0s infinite;
-  -webkit-animation: bar2-animation 1.5s linear 0s infinite; // Safari, Chrome, Opera
-  -moz-animation: bar2-animation 1.5s linear 0s infinite; // Firefox
-  -ms-animation: bar2-animation 1.5s linear 0s infinite; // Internet Explorer
-  -o-animation: bar2-animation 1.5s linear 0s infinite; // Opera
-}
-.bars .bar-bg .b3 {
-  animation: bar3-animation 1.5s linear 0s infinite;
-  -webkit-animation: bar3-animation 1.5s linear 0s infinite; // Safari, Chrome, Opera
-  -moz-animation: bar3-animation 1.5s linear 0s infinite; // Firefox
-  -ms-animation: bar3-animation 1.5s linear 0s infinite; // Internet Explorer
-  -o-animation: bar3-animation 1.5s linear 0s infinite; // Opera
-}
-.bars .bar-bg .b4 {
-  animation: bar4-animation 1.5s linear 0s infinite;
-  -webkit-animation: bar4-animation 1.5s linear 0s infinite; // Safari, Chrome, Opera
-  -moz-animation: bar4-animation 1.5s linear 0s infinite; // Firefox
-  -ms-animation: bar4-animation 1.5s linear 0s infinite; // Internet Explorer
-  -o-animation: bar4-animation 1.5s linear 0s infinite; // Opera
-}
-.loading > h4 {
-  margin: -10px 0 0 0;
+  .bar-bg {
+    height: 60px;
+    width: 10px;
+    background-color: var(--color-neutral);
+    display: flex;
+    margin: 0 1px;
+    border-radius: 9999px;
+    position: relative;
+    div {
+      position: absolute;
+      height: 0;
+      width: 100%;
+      background-color: var(--color-primary);
+      border-radius: 9999px;
+      bottom: 0;
+    }
+    .b1 {
+      animation: bar1-animation 1.5s linear 0s infinite;
+      -webkit-animation: bar1-animation 1.5s linear 0s infinite; // Safari, Chrome, Opera
+      -moz-animation: bar1-animation 1.5s linear 0s infinite; // Firefox
+      -ms-animation: bar1-animation 1.5s linear 0s infinite; // Internet Explorer
+      -o-animation: bar1-animation 1.5s linear 0s infinite; // Opera
+    }
+    .b2 {
+      animation: bar2-animation 1.5s linear 0s infinite;
+      -webkit-animation: bar2-animation 1.5s linear 0s infinite; // Safari, Chrome, Opera
+      -moz-animation: bar2-animation 1.5s linear 0s infinite; // Firefox
+      -ms-animation: bar2-animation 1.5s linear 0s infinite; // Internet Explorer
+      -o-animation: bar2-animation 1.5s linear 0s infinite; // Opera
+    }
+    .b3 {
+      animation: bar3-animation 1.5s linear 0s infinite;
+      -webkit-animation: bar3-animation 1.5s linear 0s infinite; // Safari, Chrome, Opera
+      -moz-animation: bar3-animation 1.5s linear 0s infinite; // Firefox
+      -ms-animation: bar3-animation 1.5s linear 0s infinite; // Internet Explorer
+      -o-animation: bar3-animation 1.5s linear 0s infinite; // Opera
+    }
+    .b4 {
+      animation: bar4-animation 1.5s linear 0s infinite;
+      -webkit-animation: bar4-animation 1.5s linear 0s infinite; // Safari, Chrome, Opera
+      -moz-animation: bar4-animation 1.5s linear 0s infinite; // Firefox
+      -ms-animation: bar4-animation 1.5s linear 0s infinite; // Internet Explorer
+      -o-animation: bar4-animation 1.5s linear 0s infinite; // Opera
+    }
+  }
 }
 .loading {
   display: flex;
@@ -57,6 +54,9 @@
   align-items: center;
   width: 80vw;
   height: 100%;
+  h4 {
+    margin: -10px 0 0 0;
+  }
 }
 
 @keyframes bar1-animation {

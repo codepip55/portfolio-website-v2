@@ -1,37 +1,37 @@
-.logo {
-  cursor: pointer;
-}
-.logo .black {
-  display: none;
-  height: 90px;
-  width: 90px;
-}
-.logo .white {
-  display: block;
-  height: 90px;
-  width: 90px;
-}
-.logo .black, .white {
-  -webkit-animation: hover-logo 0.5s ease-in-out; // Safari, Chrome, Opera
-  -moz-animation: hover-logo 0.5s ease-in-out; // Firefox
-  -ms-animation: hover-logo 0.5s ease-in-out; // Internet Explorer
-  -o-animation: hover-logo 0.5s ease-in-out; // Opera
-  animation: hover-logo 0.5s ease-in-out;
-}
-.logo:hover .black {
-  display: block;
-}
-.logo:hover .white {
-  display: none;
-}
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  height: fit-content;
+  .nav-links {
+    font-size: 18px;
+    font-weight: 500;
+  }
 }
-.navbar .nav-links {
-  font-size: 18px;
-  font-weight: 500;
+.logo {
+  cursor: pointer;
+  margin: auto 0;
+  .black, .white {
+    position: absolute;
+    inset: 0;
+    transition: opacity 500ms ease-in-out;
+    height: 100%;
+  }
+  .black {
+    opacity: 0;
+  }
+  .white {
+    opacity: 1;
+  }
+  &:hover {
+    .black {
+      opacity: 1;
+    }
+    .white {
+      opacity: 0;
+    }
+  }
 }
 .nav-link {
   text-transform: uppercase;
@@ -42,44 +42,19 @@
   position: relative;
   opacity: 0.75;
   cursor: pointer;
-}
-.nav-link:hover {
-  opacity: 1;
-}
-.nav-link::before {
-  transition: 300ms;
-  height: 5px;
-  content: "";
-  position: absolute;
-  background-color: #031D44;
-  width: 0%;
-  bottom: 10px;
-}
-.nav-link:hover::before {
-  width: 100%;
-}
-// Hover Animation
-@keyframes hover-logo {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-// Firefox
-@-moz-keyframes hover-logo {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-// Safari, Chrome, Opera
-@-webkit-keyframes hover-logo {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-// Internet Explorer
-@-ms-keyframes hover-logo {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-// Opera
-@-o-keyframes hover-logo {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  &:hover {
+    opacity: 1;
+    &::before {
+      width: 100%;
+    }
+  }
+  &::before {
+    transition: 300ms;
+    height: 5px;
+    content: "";
+    position: absolute;
+    background-color: #031D44;
+    width: 0%;
+    bottom: 10px;
+  }
 }

@@ -3,10 +3,13 @@
 }
 .logo .black {
   display: none;
+  height: 90px;
+  width: 90px;
 }
 .logo .white {
   display: block;
-  
+  height: 90px;
+  width: 90px;
 }
 .logo .black, .white {
   -webkit-animation: hover-logo 0.5s ease-in-out; // Safari, Chrome, Opera

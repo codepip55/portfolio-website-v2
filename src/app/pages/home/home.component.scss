@@ -2,6 +2,9 @@
   height: 100vh;
   position: relative;
   inset: 0;
+  &-top {
+    height: calc(100vh - 61.5px);
+  }
 }
 .content {
   display: inline-block;
@@ -31,20 +34,20 @@
 }
 .my-work {
   position: absolute;
-  bottom: 150px;
+  bottom: 20px;
   display: flex;
   align-items: center;
   justify-items: center;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   cursor: pointer;
   p {
     font-size: 20px;
   }
 }
 .my-work .animation {
-  width: 40px;
-  margin: -17px 0 0 0;
+  width: 50px;
+  margin: -30px 0 0 0;
   -webkit-animation: arrow-animation 2s ease-in-out 0s infinite; // Safari, Chrome, Opera
   -moz-animation: arrow-animation 2s ease-in-out 0s infinite; // Firefox
   -ms-animation: arrow-animation 2s ease-in-out 0s infinite; // Internet Explorer
@@ -55,35 +58,35 @@
   width: calc(100%/3);
   height: 100%;
   position: absolute;
-}
-.hover-area .card {
-  position: absolute;
-  bottom: 0;
-  height: 0;
-  width: 100%;
-  transition: all ease-in-out 0.25s;
-  color: black;
-  display: flex;
-  justify-content: center;
-  font-size: 20px;
-  > p {
+  .card {
     position: absolute;
-    bottom: 86px;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    transition: all ease-in-out 0.25s;
+    color: black;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    p {
+      position: absolute;
+      bottom: 86px;
+    }
   }
-}
-.hover-area:nth-child(1) {
-  left: 0;
-}
-.hover-area:nth-child(2) {
-  left: calc(100%/3);
-}
-.hover-area:nth-child(3) {
-  left: calc(calc(100%/3) * 2);
-}
-.hover-area:hover .card {
-  background-color: black;
-  color: white;
-  height: 100%;
+  &:nth-child(1) {
+    left: 0;
+  }
+  &:nth-child(2) {
+    left: calc(100%/3);
+  }
+  &:nth-child(3) {
+    left: calc(calc(100%/3) * 2);
+  }
+  &:hover .card {
+    background-color: black;
+    color: white;
+    height: 100%;
+  }
 }
 .card-content {
   opacity: 0;
@@ -118,59 +121,59 @@
   opacity: 0.75;
   cursor: pointer;
   width: fit-content;
-}
-.card-content li:hover {
-  opacity: 1;
-}
-.card-content li::before {
-  transition: 300ms;
-  height: 5px;
-  content: "";
-  position: absolute;
-  background-color: #c8cbcf;
-  width: 0%;
-  bottom: 10px;
-}
-.card-content li:hover::before {
-  width: 100%;
+  &:hover {
+    opacity: 1;
+    &::before {
+      width: 100%;
+    }
+  }
+  &::before {
+    transition: 300ms;
+    height: 5px;
+    content: "";
+    position: absolute;
+    background-color: #c8cbcf;
+    width: 0%;
+    bottom: 10px;
+  }
 }
 .modal-wrapper {
   background-color: white;
   color: black;
   padding: 1.25rem;
   text-align: left;
+  .projects {
+    margin-top: 1.25rem;
+    .title {
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      .project-card {
+        border-radius: 10px;
+        padding: 0.5rem;
+        position: relative;
+        border-width: 1px;
+        border-style: solid;
+        border-color: var(--color-neutral);
+        transition-property: border;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+        &:hover {
+          border-bottom: 1px solid var(--color-gray);
+        }
+      }
+    }
+  }
 }
 .modal-language {
   font-size: 1.875rem;
   line-height: 2.25rem;
   text-transform: uppercase;
-}
-.modal-wrapper .projects {
-  margin-top: 1.25rem;
-}
-.modal-wrapper .projects .title {
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-.modal-wrapper .projects .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-.modal-wrapper .projects .projects-grid .project-card {
-  border-radius: 10px;
-  padding: 0.5rem;
-  position: relative;
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--color-neutral);
-  transition-property: border;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.modal-wrapper .projects .projects-grid .project-card:hover {
-  border-bottom: 1px solid var(--color-gray);
 }
 
 @keyframes arrow-animation {

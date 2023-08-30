@@ -8,36 +8,54 @@
 
   <div class="my-work" (click)="scrollToBottom()">
     <p>My Experience</p>
-    <img src="assets/svg/chevron-down.svg" class="animation">
+    <img src="assets/svg/icons/chevron-down.svg" class="animation"/>
   </div>
 </div>
 
-<div class="page">
-  <div class="hover-area">
-    <div class="card">
-      <ul class="card-content">
-        <li *ngFor="let language of frontend" (click)="open('language-info', language.slug)">{{ language.name }}</li>
-      </ul>
-      <p>Frontend</p>
+<ng-container *ngIf="type === 'desktop'; else mobile">
+  <div class="page">
+    <div class="hover-area">
+      <div class="card">
+        <ul class="card-content">
+          <li *ngFor="let language of frontend" (click)="open('language-info', language.slug)">{{ language.name }}</li>
+        </ul>
+        <p>Frontend</p>
+      </div>
+    </div>
+    <div class="hover-area">
+      <div class="card">
+        <ul class="card-content">
+          <li *ngFor="let language of database" (click)="open('language-info', language.slug)">{{ language.name }}</li>
+        </ul>
+        <p>Database</p>
+      </div>
+    </div>
+    <div class="hover-area">
+      <div class="card">
+        <ul class="card-content">
+          <li *ngFor="let language of backend" (click)="open('language-info', language.slug)">{{ language.name }}</li>
+        </ul>
+        <p>Backend</p>
+      </div>
     </div>
   </div>
-  <div class="hover-area">
-    <div class="card">
-      <ul class="card-content">
-        <li *ngFor="let language of database" (click)="open('language-info', language.slug)">{{ language.name }}</li>
-      </ul>
-      <p>Database</p>
+</ng-container>
+
+<ng-template #mobile>
+  <div class="page">
+    <div class="icon-grid">
+      <div class="database">
+        <img src="assets/svg/icons/database.svg"/>
+      </div>
+      <div class="frontend">
+        <img src="assets/svg/icons/frontend.svg"/>
+      </div>
+      <div class="backend">
+        <img src="assets/svg/icons/backend.svg"/>
+      </div>
     </div>
   </div>
-  <div class="hover-area">
-    <div class="card">
-      <ul class="card-content">
-        <li *ngFor="let language of backend" (click)="open('language-info', language.slug)">{{ language.name }}</li>
-      </ul>
-      <p>Backend</p>
-    </div>
-  </div>
-</div>
+</ng-template>
 
 <app-modal id="language-info" size="xl">
   <div class="modal-wrapper">

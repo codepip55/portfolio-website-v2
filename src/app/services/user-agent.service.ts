@@ -8,15 +8,6 @@ export class UserAgentService {
 
   constructor() { }
 
-  // getDeviceType() {
-  //   let userAgent = navigator.userAgent;
-
-  //   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(userAgent))
-  //     return DeviceType.Mobile;
-
-  //   return DeviceType.Desktop;
-  // }
-
   getDeviceType() {
     let check = false;
     // @ts-ignore

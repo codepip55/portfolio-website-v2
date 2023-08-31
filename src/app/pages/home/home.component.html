@@ -44,13 +44,13 @@
 <ng-template #mobile>
   <div class="page">
     <div class="icon-grid">
-      <div class="database">
+      <div class="database" (click)="openType('database')">
         <img src="assets/svg/icons/database.svg"/>
       </div>
-      <div class="frontend">
+      <div class="frontend" (click)="openType('frontend')">
         <img src="assets/svg/icons/frontend.svg"/>
       </div>
-      <div class="backend">
+      <div class="backend" (click)="openType('backend')">
         <img src="assets/svg/icons/backend.svg"/>
       </div>
     </div>
@@ -78,6 +78,45 @@
           </div>
         </ng-container>
       </div>
+    </div>
+  </div>
+</app-modal>
+
+<app-modal id="frontend" size="xl">
+  <div class="mobile-modal">
+    <div class="modal-title modal-language">
+      <div>Frontend</div>
+    </div>
+    <div class="list">
+      <ul class="card-content mobile-card-content">
+        <li *ngFor="let language of frontend" (click)="mobileOpen('language-info', language.slug, 'frontend')">{{ language.name }}</li>
+      </ul>
+    </div>
+  </div>
+</app-modal>
+
+<app-modal id="database" size="xl">
+  <div class="mobile-modal">
+    <div class="modal-title modal-language">
+      <div>Database</div>
+    </div>
+    <div class="list">
+      <ul class="card-content mobile-card-content">
+        <li *ngFor="let language of database" (click)="mobileOpen('language-info', language.slug, 'database')">{{ language.name }}</li>
+      </ul>
+    </div>
+  </div>
+</app-modal>
+
+<app-modal id="backend" size="xl">
+  <div class="mobile-modal">
+    <div class="modal-title modal-language">
+      <div>Backend</div>
+    </div>
+    <div class="list">
+      <ul class="card-content mobile-card-content">
+        <li *ngFor="let language of backend" (click)="mobileOpen('language-info', language.slug, 'backend')">{{ language.name }}</li>
+      </ul>
     </div>
   </div>
 </app-modal>

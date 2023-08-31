@@ -206,7 +206,7 @@
     }
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
       .project-card {
         border-radius: 10px;
@@ -225,10 +225,27 @@
     }
   }
 }
+@media (min-width: 400px) {
+  .modal-wrapper .projects .projects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 .modal-language {
   font-size: 1.875rem;
   line-height: 2.25rem;
   text-transform: uppercase;
+}
+.mobile-modal {
+  background-color: white;
+  color: black;
+}
+.modal-title {
+  padding: 1.25rem;
+}
+.mobile-card-content {
+  opacity: 1;
+  display: block;
+  font-size: 36px;
 }
 
 @keyframes arrow-animation {

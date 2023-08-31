@@ -48,6 +48,20 @@
     }
   }
 }
+.mobile-modal {
+  overflow: hidden;
+}
+.mobile-modal-content {
+  background-color: white;
+  color: black;
+  position: relative;
+}
+img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 14px 14px 0 0;
+}
 @media (min-width: 640px) {
   .modal-outside {
     .divider {

@@ -2,6 +2,8 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { ModalService } from '../../services/modal.service';
+import { DeviceType } from 'src/app/models/deviceType';
+import { UserAgentService } from 'src/app/services/user-agent.service';
 
 @Component({
   selector: 'app-modal',
@@ -37,9 +39,14 @@ export class ModalComponent implements OnInit, OnDestroy {
   constructor(
     private modalService: ModalService,
     private el: ElementRef,
+    private userAgentService: UserAgentService
   ) { }
 
+  type: DeviceType;
+
   ngOnInit(): void {
+    this.type = this.userAgentService.getDeviceType();
+
     if (!this.id) return console.error('Modal ID not specified');
 
     document.body.appendChild(this.el.nativeElement);

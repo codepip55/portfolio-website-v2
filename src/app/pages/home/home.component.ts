@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  async open(id: string, language: string) {
+  open(id: string, language: string) {
     const lang = this.languageData.map(e => e.name).indexOf(language)
 
     this.language = this.languageData[lang].name
@@ -76,6 +76,22 @@ export class HomeComponent implements OnInit {
     this.projects = this.languageData[lang].projects
 
     this.modalService.open(id);
+  }
+
+  mobileOpen(id: string, language: string, type: string) {
+    this.modalService.close(type)
+
+    const lang = this.languageData.map(e => e.name).indexOf(language)
+
+    this.language = this.languageData[lang].name
+    this.description = this.languageData[lang].description
+    this.projects = this.languageData[lang].projects
+
+    this.modalService.open(id);
+  }
+
+  openType(id: string) {
+    this.modalService.open(id)
   }
 
   openLink(link: string) {

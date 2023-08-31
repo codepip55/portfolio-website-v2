@@ -9,8 +9,12 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'menu', component: MenuComponent },
+
+  // External Links
   { path: 'resume', canActivate: [redirectGuard], data: { externalUrl: "https://cms.pepijncolenbrander.com/uploads/Pepijn_s_Resume_c24cdea195.pdf" }, component: MenuComponent },
   { path: 'privacypolicy', canActivate: [redirectGuard], data: { externalUrl: "https://cms.pepijncolenbrander.com/uploads/PC_Privacy_Policy_4aaa9d89ad.pdf" }, component: MenuComponent },
+
+  // Error Pages
   { path: '404', component: NotFoundComponent },
   /* @bottom */
   { path: '**', redirectTo: '/404' }

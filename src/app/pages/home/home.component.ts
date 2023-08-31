@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DeviceType } from 'src/app/models/deviceType';
 
+import { DeviceType } from 'src/app/models/deviceType';
 import { HomeData } from 'src/app/models/homeData';
 import { LanguageData } from 'src/app/models/languageData';
 import { ModalService } from 'src/app/services/modal.service';

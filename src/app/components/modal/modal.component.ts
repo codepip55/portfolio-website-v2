@@ -89,5 +89,4 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.el.nativeElement.style.display = 'none';
     document.body.classList.remove('modal-open');
   }
-
 }

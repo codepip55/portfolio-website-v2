@@ -1,28 +1,12 @@
-<ng-container *ngIf="type === 'desktop'; else mobileModal">
-  <div class="modal" [ngStyle]="{ 'max-width': maxWidth, 'min-width': maxWidth }">
-    <div class="modal-outside">
-      <div class="mask">
-        <div @opacity class="mask-bg modal-bg"></div>
-      </div>
-      <span class="divider">​</span>
-      <div @opacityScale class="content" [ngStyle]="{ 'max-width': maxWidth, 'min-width': maxWidth }">
-        <ng-content></ng-content>
-      </div>
+<div class="modal" [ngStyle]="{ 'max-width': maxWidth, 'min-width': maxWidth }" [class.mobile-modal]="isMobile">
+  <div class="modal-outside">
+    <div class="mask">
+      <div @opacity class="mask-bg modal-bg"></div>
+    </div>
+    <span class="divider">​</span>
+    <div @opacityScale class="content" [ngStyle]="{ 'max-width': isMobile ? '100vw' : maxWidth, 'min-width': isMobile ? '0' : maxWidth }" [class.mobile-modal-content]="isMobile">
+      <img src="assets/svg/icons/x-circle.svg" (click)="close()" *ngIf="isMobile"/>
+      <ng-content></ng-content>
     </div>
   </div>
-</ng-container>
-
-<ng-template #mobileModal>
-  <div class="modal mobile-modal">
-    <div class="modal-outside">
-      <div class="mask">
-        <div @opacity class="mask-bg modal-bg"></div>
-      </div>
-      <span class="divider">​</span>
-      <div @opacityScale class="content mobile-modal-content" style="height: 100vh; width: 100vw;">
-        <img src="assets/svg/icons/x-circle.svg" (click)="close()"/>
-        <ng-content></ng-content>
-      </div>
-    </div>
-  </div>
-</ng-template>
+</div>

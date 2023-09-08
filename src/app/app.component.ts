@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StrapiService } from './services/strapi.service';
 import { firstValueFrom } from 'rxjs';
+
+import { StrapiService } from './services/strapi.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { firstValueFrom } from 'rxjs';
 export class AppComponent implements OnInit {
 
   constructor(
-    private strapiService: StrapiService
+    private strapiService: StrapiService,
   ) { }
 
   title = 'Pepijn\'s Portfolio';

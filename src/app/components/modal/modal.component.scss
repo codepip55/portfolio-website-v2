@@ -13,50 +13,67 @@
   display: flex;
   align-items: center;
   justify-items: center;
-}
-.modal .modal-outside {
-  border-width: 1px;
-  border-color: var(--color-gray);
-  border-style: solid;
-  height: fit-content;
-  border-radius: 10px;
-}
-.modal .modal-outside .mask {
-  position: fixed;
-  inset: 0;
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.modal .modal-outside .mask .mask-bg {
-  position: absolute;
-  inset: 0;
-  background-color: black;
-  opacity: 75%;
-}
-.modal-outside .divider {
-  display: none;
-}
-.modal-outside .content {
-  position: relative;
-  display: inline-block;
-  vertical-align: bottom;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  min-width: 95%;
-}
-
-@media (min-width: 640px) {
-  .modal-outside .divider {
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
+  .modal-outside {
+    border-width: 1px;
+    border-color: var(--color-gray);
+    border-style: solid;
+    height: fit-content;
+    border-radius: 10px;
+    .mask {
+      position: fixed;
+      inset: 0;
+      transition-property: opacity;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+      .mask-bg {
+        position: absolute;
+        inset: 0;
+        background-color: black;
+        opacity: 75%;
+      }
+    }
+    .divider {
+      display: none;
+    }
+    .content {
+      position: relative;
+      display: inline-block;
+      vertical-align: bottom;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+      min-width: 95%;
+    }
   }
-  .modal-outside .content {
-    vertical-align: middle;
-    width: 100%;
+}
+.mobile-modal {
+  overflow: hidden;
+}
+.mobile-modal-content {
+  background-color: white;
+  color: black;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 14px 14px 0 0;
+}
+@media (min-width: 640px) {
+  .modal-outside {
+    .divider {
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+    .content {
+      vertical-align: middle;
+      width: 100%;
+    }
   }
 }

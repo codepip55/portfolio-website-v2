@@ -1,12 +1,12 @@
 <div class="menu">
   <ul>
-    <li routerLink="/resume">
+    <li routerLink="/resume" [class.mobile]="type !== 'desktop'">
       <p>Resume</p>
-      <div class="box"></div>
+      <div class="box" [ngStyle]="{ 'display': type === 'desktop' ? 'auto' : 'none' }"></div>
     </li>
-    <li routerLink="/privacypolicy">
+    <li routerLink="/privacypolicy" [class.mobile]="type !== 'desktop'">
       <p>Privacy Policy</p>
-      <div class="box"></div>
+      <div class="box" [ngStyle]="{ 'display': type === 'desktop' ? 'auto' : 'none' }"></div>
     </li>
   </ul>
 </div>

@@ -6,6 +6,11 @@ html {
   width: 80%;
   margin: 0 auto;
 }
+@media (max-width: 400px) {
+  html {
+    width: 95%;
+  }
+}
 .fadein-animation {
   -webkit-animation: fadein 0.3s; // Safari, Chrome, Opera
   -moz-animation: fadein 0.3s; // Firefox

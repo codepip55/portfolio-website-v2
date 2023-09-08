@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DeviceType } from 'src/app/models/deviceType';
 import { HomeData } from 'src/app/models/homeData';
 import { LanguageData } from 'src/app/models/languageData';
 import { ModalService } from 'src/app/services/modal.service';
+import { UserAgentService } from 'src/app/services/user-agent.service';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +14,11 @@ import { ModalService } from 'src/app/services/modal.service';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private modalService: ModalService
+    private modalService: ModalService,
+    private userAgentService: UserAgentService
   ) { }
+
+  type: DeviceType = DeviceType.Desktop;
 
   homeData: HomeData;
   languageData: LanguageData[] = [];
@@ -30,6 +35,8 @@ export class HomeComponent implements OnInit {
   }[] = [];
 
   async ngOnInit(): Promise<void> {
+    this.type = this.userAgentService.getDeviceType()
+
     let home = JSON.parse(window.localStorage.getItem('homeData')!)
     let languages = JSON.parse(window.localStorage.getItem('languageData')!)
 
@@ -61,7 +68,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  async open(id: string, language: string) {
+  open(id: string, language: string) {
     const lang = this.languageData.map(e => e.name).indexOf(language)
 
     this.language = this.languageData[lang].name
@@ -69,6 +76,22 @@ export class HomeComponent implements OnInit {
     this.projects = this.languageData[lang].projects
 
     this.modalService.open(id);
+  }
+
+  mobileOpen(id: string, language: string, type: string) {
+    this.modalService.close(type)
+
+    const lang = this.languageData.map(e => e.name).indexOf(language)
+
+    this.language = this.languageData[lang].name
+    this.description = this.languageData[lang].description
+    this.projects = this.languageData[lang].projects
+
+    this.modalService.open(id);
+  }
+
+  openType(id: string) {
+    this.modalService.open(id)
   }
 
   openLink(link: string) {

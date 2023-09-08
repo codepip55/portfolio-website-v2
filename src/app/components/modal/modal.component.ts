@@ -42,10 +42,12 @@ export class ModalComponent implements OnInit, OnDestroy {
     private userAgentService: UserAgentService
   ) { }
 
-  type: DeviceType;
+  public type: DeviceType;
+  public isMobile: boolean = false;
 
   ngOnInit(): void {
     this.type = this.userAgentService.getDeviceType();
+    this.isMobile = this.type === DeviceType.Mobile;
 
     if (!this.id) return console.error('Modal ID not specified');
 

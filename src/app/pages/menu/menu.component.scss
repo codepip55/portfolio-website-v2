@@ -1,65 +1,65 @@
 .menu {
-  height: 100vh;
-  width: 100%;
-  ul {
-    font-size: 40px;
-    line-height: 125px;
-    list-style: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    li {
-      position: relative;
-      display: flex;
-      justify-items: center;
-      margin: 10px 0 0 0;
-      width: fit-content;
-      p {
-        margin: 0 50px;
-        z-index: 1;
-        cursor: pointer;
-      }
-      &:hover .box {
-        left: 100px;
-      }
-    }
-    .box {
-      position: absolute;
-      left: 0px;
-      background-color: var(--color-gray);
-      opacity: 50%;
-      height: 125px;
-      width: 450px;
-      transition: all ease-in-out 0.25s;
-      cursor: pointer;
-      border-radius: 10px;
-    }
-  }
+	height: 100vh;
+	width: 100%;
+	ul {
+		font-size: 40px;
+		line-height: 125px;
+		list-style: none;
+		text-transform: uppercase;
+		font-weight: 700;
+		li {
+			position: relative;
+			display: flex;
+			justify-items: center;
+			margin: 10px 0 0 0;
+			width: fit-content;
+			p {
+				margin: 0 50px;
+				z-index: 1;
+				cursor: pointer;
+			}
+			&:hover .box {
+				left: 100px;
+			}
+		}
+		.box {
+			position: absolute;
+			left: 0px;
+			background-color: var(--color-gray);
+			opacity: 50%;
+			height: 125px;
+			width: 450px;
+			transition: all ease-in-out 0.25s;
+			cursor: pointer;
+			border-radius: 10px;
+		}
+	}
 }
 
 .mobile {
-  padding-top: 10px;
-  list-style: none;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: block;
-  position: relative;
-  opacity: 0.75;
-  cursor: pointer;
-  width: fit-content;
-  font-size: 25px;
-  &:hover {
-    opacity: 1;
-    &::before {
-      width: 100%;
-    }
-  }
-  &::before {
-    transition: 300ms;
-    height: 5px;
-    content: "";
-    position: absolute;
-    background-color: #c8cbcf;
-    width: 0%;
-    bottom: 10px;
-  }
+	padding-top: 10px;
+	list-style: none;
+	text-transform: uppercase;
+	text-decoration: none;
+	display: block;
+	position: relative;
+	opacity: 0.75;
+	cursor: pointer;
+	width: fit-content;
+	font-size: 25px;
+	&:hover {
+		opacity: 1;
+		&::before {
+			width: 100%;
+		}
+	}
+	&::before {
+		transition: 300ms;
+		height: 5px;
+		content: "";
+		position: absolute;
+		background-color: #c8cbcf;
+		width: 0%;
+		bottom: 10px;
+	}
 }

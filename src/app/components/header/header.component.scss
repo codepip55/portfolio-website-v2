@@ -1,68 +1,70 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  height: 61.5px;
-  .nav-links {
-    font-size: 18px;
-    font-weight: 500;
-  }
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	height: 61.5px;
+	.nav-links {
+		font-size: 18px;
+		font-weight: 500;
+	}
 }
 .logo {
-  cursor: pointer;
-  margin: auto 0;
-  .black, .white, .white-mobile {
-    position: absolute;
-    inset: 0;
-    transition: opacity 500ms ease-in-out;
-    height: 100%;
-  }
-  .black {
-    opacity: 0;
-  }
-  .white {
-    opacity: 1;
-  }
-  &:hover {
-    .black {
-      opacity: 1;
-    }
-    .white {
-      opacity: 0;
-    }
-  }
+	cursor: pointer;
+	margin: auto 0;
+	.black,
+	.white,
+	.white-mobile {
+		position: absolute;
+		inset: 0;
+		transition: opacity 500ms ease-in-out;
+		height: 100%;
+	}
+	.black {
+		opacity: 0;
+	}
+	.white {
+		opacity: 1;
+	}
+	&:hover {
+		.black {
+			opacity: 1;
+		}
+		.white {
+			opacity: 0;
+		}
+	}
 }
 .nav-link {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 20px 0px;
-  margin: 0px 20px;
-  display: inline-block;
-  position: relative;
-  opacity: 0.75;
-  cursor: pointer;
-  &:hover {
-    opacity: 1;
-    &::before {
-      width: 100%;
-    }
-  }
-  &::before {
-    transition: 300ms;
-    height: 5px;
-    content: "";
-    position: absolute;
-    background-color: #031D44;
-    width: 0%;
-    bottom: 10px;
-  }
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 20px 0px;
+	margin: 0px 20px;
+	display: inline-block;
+	position: relative;
+	opacity: 0.75;
+	cursor: pointer;
+	&:hover {
+		opacity: 1;
+		&::before {
+			width: 100%;
+		}
+	}
+	&::before {
+		transition: 300ms;
+		height: 5px;
+		content: "";
+		position: absolute;
+		background-color: #031d44;
+		width: 0%;
+		bottom: 10px;
+	}
 }
 button {
-  background-color: #eef1f4;
-  width: 116px;
-  height: 40px;
-  border-radius: 112px;
-  border: none;
-  font-weight: 500;
+	background-color: #eef1f4;
+	width: 116px;
+	height: 40px;
+	border-radius: 112px;
+	border: none;
+	font-weight: 500;
 }

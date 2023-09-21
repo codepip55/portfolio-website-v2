@@ -1,12 +1,28 @@
-<div class="modal" [ngStyle]="{ 'max-width': maxWidth, 'min-width': maxWidth }" [class.mobile-modal]="isMobile">
-  <div class="modal-outside">
-    <div class="mask">
-      <div @opacity class="mask-bg modal-bg"></div>
-    </div>
-    <span class="divider">​</span>
-    <div @opacityScale class="content" [ngStyle]="{ 'max-width': isMobile ? '100vw' : maxWidth, 'min-width': isMobile ? '0' : maxWidth }" [class.mobile-modal-content]="isMobile">
-      <img src="assets/svg/icons/x-circle.svg" (click)="close()" *ngIf="isMobile"/>
-      <ng-content></ng-content>
-    </div>
-  </div>
+<div
+	class="modal"
+	[ngStyle]="{ 'max-width': maxWidth, 'min-width': maxWidth }"
+	[class.mobile-modal]="isMobile"
+>
+	<div class="modal-outside">
+		<div class="mask">
+			<div @opacity class="mask-bg modal-bg"></div>
+		</div>
+		<span class="divider">​</span>
+		<div
+			@opacityScale
+			class="content"
+			[ngStyle]="{
+				'max-width': isMobile ? '100vw' : maxWidth,
+				'min-width': isMobile ? '0' : maxWidth
+			}"
+			[class.mobile-modal-content]="isMobile"
+		>
+			<img
+				src="assets/svg/icons/x-circle.svg"
+				(click)="close()"
+				*ngIf="isMobile"
+			/>
+			<ng-content></ng-content>
+		</div>
+	</div>
 </div>

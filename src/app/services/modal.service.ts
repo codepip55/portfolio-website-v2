@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: 'root',
 })
 export class ModalService {
-  private modals: any[] = [];
+	private modals: any[] = [];
 
-  add(modal: any) {
-    this.modals.push(modal);
-  }
+	add(modal: any) {
+		this.modals.push(modal);
+	}
 
-  remove(id: string) {
-    this.modals = this.modals.filter(m => m.id !== id);
-  }
+	remove(id: string) {
+		this.modals = this.modals.filter((m) => m.id !== id);
+	}
 
-  open(id: string) {
-    const modal = this.modals.find(m => m.id === id);
-    modal.open();
-  }
+	open(id: string) {
+		const modal = this.modals.find((m) => m.id === id);
+		modal.open();
+	}
 
-  close(id: string) {
-    const modal = this.modals.find(m => m.id === id);
-    modal.close();
-  }
+	close(id: string) {
+		const modal = this.modals.find((m) => m.id === id);
+		modal.close();
+	}
 
-  closeAll() {
-    this.modals.forEach(m => m.close());
-  }
+	closeAll() {
+		this.modals.forEach((m) => m.close());
+	}
 }

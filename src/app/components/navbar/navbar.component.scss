@@ -1,0 +1,48 @@
+.content {
+  width: 120px;
+  height: 100vh;
+  border-right: 1px solid white;
+  border-left: 1px solid red;
+  .logo {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    display: block;
+    cursor: pointer;
+  }
+  .divider {
+    background-color: white;
+    height: 1px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .folder-icon,
+  .download-icon {
+    width: 20px;
+    margin-right: 5px;
+  }
+  .folder-text,
+  .download-text {
+    text-align: center;
+    margin-right: 5px;
+  }
+  .projects {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    margin: 10px auto;
+    justify-content: center;
+  }
+  .downloads {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    margin: 10px auto;
+    justify-content: center;
+  }
+  .projects,
+  .downloads {
+    cursor: pointer;
+  }
+}

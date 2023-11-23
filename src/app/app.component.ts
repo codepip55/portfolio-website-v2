@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 
 import { StrapiService } from './services/strapi.service';
+import { StorageService } from './services/storage.service';
 
 @Component({
 	selector: 'app-root',
@@ -9,7 +10,7 @@ import { StrapiService } from './services/strapi.service';
 	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-	constructor(private strapiService: StrapiService) {}
+	constructor(private strapiService: StrapiService, private storageService: StorageService) {}
 
 	title = "Pepijn's Portfolio";
 
@@ -19,14 +20,14 @@ export class AppComponent implements OnInit {
 		this.loading = true;
 
 		if (new Date(window.localStorage.getItem('expiry')!) < new Date()) {
-			window.localStorage.removeItem('homeData');
-			window.localStorage.removeItem('languageData');
-			window.localStorage.removeItem('expiry');
+			this.storageService.removeItem('languageData');
+			this.storageService.removeItem('expiry');
+      this.storageService.removeItem('homeData')
 		}
 
 		if (
-			window.localStorage.getItem('homeData') &&
-			window.localStorage.getItem('languageData')
+			this.storageService.getItem('homeData') &&
+			this.storageService.getItem('languageData')
 		) {
 			this.loading = false;
 			return;
@@ -36,9 +37,9 @@ export class AppComponent implements OnInit {
 		let languages = await firstValueFrom(this.strapiService.getLanguages());
 		let expiry = new Date(new Date().getTime() + 60 * 60 * 24 * 3 * 1000); // 72 hours
 
-		window.localStorage.setItem('homeData', JSON.stringify(home));
-		window.localStorage.setItem('languageData', JSON.stringify(languages));
-		window.localStorage.setItem('expiry', expiry.toString());
+		this.storageService.setItem('homeData', home);
+		this.storageService.setItem('languageData', languages);
+		this.storageService.setItem('expiry', expiry);
 
 		this.loading = false;
 	}

@@ -1,0 +1,29 @@
+.home-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .text-container {
+    margin-left: 70px;
+    .title, .quote {
+      background-image: linear-gradient(-45deg, var(--color-primary), var(--color-secondary), var(--color-secondary), var(--color-primary));
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 300%;
+      background-position: -150%;
+      animation: animatedText 60s infinite;
+      height: fit-content;
+    }
+    .title {
+      text-transform: uppercase;
+      font-size: 6rem;
+    }
+    .quote {
+      margin-top: -20px;
+    }
+  }
+}
+@keyframes animatedText{
+  to{
+    background-position: 100%; 
+  }
+}

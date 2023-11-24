@@ -13,6 +13,7 @@
     margin-left: 50px;
     padding-top: 90px;
     position: relative;
+    z-index: 9999;
   }
   .pepijn,
   .colenbrander {
@@ -91,5 +92,55 @@
     position: absolute;
     left: 50px;
     top: 615px;
+  }
+}
+@media (max-width: 1029px) {
+  .home-container {
+    .text {
+      .pepijn,
+      .colenbrander {
+        font-size: 96px;
+      }
+      .reality {
+        left: 200px
+      }
+      .reality-arrow {
+        left: 0;
+      }
+    }
+  }
+  .phone {
+    display: none;
+  }
+}
+@media (max-width: 770px) {
+  .home-container {
+    .text {
+      .pepijn,
+      .colenbrander {
+        font-size: 64px;
+        height: fit-content;
+      }
+      .turning-your,
+      .ideas,
+      .into-digital,
+      .reality {
+        font-size: 32px;
+        height: 35px;
+      }
+      .reality {
+        left: 100px
+      }
+      .reality-arrow {
+        top: 370px;
+        left: -50px;
+        transform: scale(50%);
+      }
+      .ideas-arrow {
+        top: 280px;
+        left: 20px;
+        transform: scale(50%);
+      }
+    }
   }
 }

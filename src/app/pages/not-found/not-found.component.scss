@@ -1,64 +1,94 @@
 .page {
-  overflow: hidden;
-  height: 100%;
-  .error-code {
-    display: flex;
-    font-size: 15rem;
-    line-height: 0px;
-    cursor: pointer;
-    width: fit-content;
-  }
-  h1 {
-    &:nth-child(1) {
-      -webkit-animation: code-animation 2s ease-in-out 0s infinite; // Safari, Chrome, Opera
-      -moz-animation: code-animation 2s ease-in-out 0s infinite; // Firefox
-      -ms-animation: code-animation 2s ease-in-out 0s infinite; // Internet Explorer
-      -o-animation: code-animation 2s ease-in-out 0s infinite; // Opera
-      animation: code-animation 2s ease-in-out 0s infinite;
-    }
-    &:nth-child(2) {
-      -webkit-animation: code-animation 2s ease-in-out 0.2s infinite; // Safari, Chrome, Opera
-      -moz-animation: code-animation 2s ease-in-out 0.2s infinite; // Firefox
-      -ms-animation: code-animation 2s ease-in-out 0.2s infinite; // Internet Explorer
-      -o-animation: code-animation 2s ease-in-out 0.2s infinite; // Opera
-      animation: code-animation 2s ease-in-out 0.2s infinite;
-    }
-    &:nth-child(3) {
-      -webkit-animation: code-animation 2s ease-in-out 0.4s infinite; // Safari, Chrome, Opera
-      -moz-animation: code-animation 2s ease-in-out 0.4s infinite; // Firefox
-      -ms-animation: code-animation 2s ease-in-out 0.4s infinite; // Internet Explorer
-      -o-animation: code-animation 2s ease-in-out 0.4s infinite; // Opera
-      animation: code-animation 2s ease-in-out 0.4s infinite;
-    }
-  }
+	overflow: hidden;
+	height: 100%;
+	.error-code {
+		display: flex;
+		font-size: 15rem;
+		line-height: 0px;
+		cursor: pointer;
+		width: fit-content;
+	}
+	h1 {
+		&:nth-child(1) {
+			-webkit-animation: code-animation 2s ease-in-out 0s infinite; // Safari, Chrome, Opera
+			-moz-animation: code-animation 2s ease-in-out 0s infinite; // Firefox
+			-ms-animation: code-animation 2s ease-in-out 0s infinite; // Internet Explorer
+			-o-animation: code-animation 2s ease-in-out 0s infinite; // Opera
+			animation: code-animation 2s ease-in-out 0s infinite;
+		}
+		&:nth-child(2) {
+			-webkit-animation: code-animation 2s ease-in-out 0.2s infinite; // Safari, Chrome, Opera
+			-moz-animation: code-animation 2s ease-in-out 0.2s infinite; // Firefox
+			-ms-animation: code-animation 2s ease-in-out 0.2s infinite; // Internet Explorer
+			-o-animation: code-animation 2s ease-in-out 0.2s infinite; // Opera
+			animation: code-animation 2s ease-in-out 0.2s infinite;
+		}
+		&:nth-child(3) {
+			-webkit-animation: code-animation 2s ease-in-out 0.4s infinite; // Safari, Chrome, Opera
+			-moz-animation: code-animation 2s ease-in-out 0.4s infinite; // Firefox
+			-ms-animation: code-animation 2s ease-in-out 0.4s infinite; // Internet Explorer
+			-o-animation: code-animation 2s ease-in-out 0.4s infinite; // Opera
+			animation: code-animation 2s ease-in-out 0.4s infinite;
+		}
+	}
 }
 
 @keyframes code-animation {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(25px);}
-  100% { transform: translateY(0px);}
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(25px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 // Firefox
 @-moz-keyframes code-animation {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(25px);}
-  100% { transform: translateY(0px);}
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(25px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 // Safari, Chrome, Opera
 @-webkit-keyframes code-animation {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(25px);}
-  100% { transform: translateY(0px);}
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(25px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 // Internet Explorer
 @-ms-keyframes code-animation {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(25px);}
-  100% { transform: translateY(0px);}
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(25px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 // Opera
 @-o-keyframes code-animation {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(25px);}
-  100% { transform: translateY(0px);}
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(25px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }

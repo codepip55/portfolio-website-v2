@@ -21,7 +21,7 @@ export class UserAgentService {
 				)
 			)
 				check = true;
-		})(navigator.userAgent || navigator.vendor || window.opera);
+		})(navigator.userAgent || navigator.vendor);
 		if (check) return DeviceType.Mobile;
 		return DeviceType.Desktop;
 	}

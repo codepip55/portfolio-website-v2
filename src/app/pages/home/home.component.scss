@@ -1,279 +1,312 @@
 .page {
-  margin-top: 20px;
-  height: 100vh;
-  position: relative;
-  inset: 0;
-  &-top {
-    height: calc(100vh - 61.5px);
-  }
-  .icon-grid {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    .database {
-      grid-area: 1 / 1 / 1 / 1;
-      display: flex;
-      align-items: center;
+	margin-top: 20px;
+	height: 100vh;
+	position: relative;
+	inset: 0;
+	&-top {
+		height: calc(100vh - 61.5px);
+	}
+	.icon-grid {
+		height: 100%;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+		.database {
+			grid-area: 1 / 1 / 1 / 1;
+			display: flex;
+			align-items: center;
 
-      -webkit-animation: arrow-animation 2s ease-in-out 0s infinite; // Safari, Chrome, Opera
-      -moz-animation: arrow-animation 2s ease-in-out 0s infinite; // Firefox
-      -ms-animation: arrow-animation 2s ease-in-out 0s infinite; // Internet Explorer
-      -o-animation: arrow-animation 2s ease-in-out 0s infinite; // Opera
-      animation: arrow-animation 2s ease-in-out 0s infinite;
-    }
-    .frontend {
-      grid-area: 2 / 2 / 2 / 2;
-      display: flex;
-      align-items: center;
+			-webkit-animation: arrow-animation 2s ease-in-out 0s infinite; // Safari, Chrome, Opera
+			-moz-animation: arrow-animation 2s ease-in-out 0s infinite; // Firefox
+			-ms-animation: arrow-animation 2s ease-in-out 0s infinite; // Internet Explorer
+			-o-animation: arrow-animation 2s ease-in-out 0s infinite; // Opera
+			animation: arrow-animation 2s ease-in-out 0s infinite;
+		}
+		.frontend {
+			grid-area: 2 / 2 / 2 / 2;
+			display: flex;
+			align-items: center;
 
-      -webkit-animation: arrow-animation 2s ease-in-out 0.3s infinite; // Safari, Chrome, Opera
-      -moz-animation: arrow-animation 2s ease-in-out 0.3s infinite; // Firefox
-      -ms-animation: arrow-animation 2s ease-in-out 0.3s infinite; // Internet Explorer
-      -o-animation: arrow-animation 2s ease-in-out 0.3s infinite; // Opera
-      animation: arrow-animation 2s ease-in-out 0.3s infinite;
-    }
-    .backend {
-      grid-area: 3 / 1 / 3 / 1;
-      display: flex;
-      align-items: center;
+			-webkit-animation: arrow-animation 2s ease-in-out 0.3s infinite; // Safari, Chrome, Opera
+			-moz-animation: arrow-animation 2s ease-in-out 0.3s infinite; // Firefox
+			-ms-animation: arrow-animation 2s ease-in-out 0.3s infinite; // Internet Explorer
+			-o-animation: arrow-animation 2s ease-in-out 0.3s infinite; // Opera
+			animation: arrow-animation 2s ease-in-out 0.3s infinite;
+		}
+		.backend {
+			grid-area: 3 / 1 / 3 / 1;
+			display: flex;
+			align-items: center;
 
-      -webkit-animation: arrow-animation 2s ease-in-out 0.6s infinite; // Safari, Chrome, Opera
-      -moz-animation: arrow-animation 2s ease-in-out 0.6s infinite; // Firefox
-      -ms-animation: arrow-animation 2s ease-in-out 0.6s infinite; // Internet Explorer
-      -o-animation: arrow-animation 2s ease-in-out 0.6s infinite; // Opera
-      animation: arrow-animation 2s ease-in-out 0.6s infinite;
-    }
-    .database, .backend, .frontend {
-      cursor: pointer;
-    }
-  }
+			-webkit-animation: arrow-animation 2s ease-in-out 0.6s infinite; // Safari, Chrome, Opera
+			-moz-animation: arrow-animation 2s ease-in-out 0.6s infinite; // Firefox
+			-ms-animation: arrow-animation 2s ease-in-out 0.6s infinite; // Internet Explorer
+			-o-animation: arrow-animation 2s ease-in-out 0.6s infinite; // Opera
+			animation: arrow-animation 2s ease-in-out 0.6s infinite;
+		}
+		.database,
+		.backend,
+		.frontend {
+			cursor: pointer;
+		}
+	}
 }
 .content {
-  display: inline-block;
-  h1, p {
-    margin: 0;
-  }
-  h1 {
-    font-size: 48px;
-    color: black;
-  }
-  p {
-    font-size: 14px;
-    color: var(--color-gray);
-    width: 0;
-    min-width: 100%;
-  }
+	display: inline-block;
+	h1,
+	p {
+		margin: 0;
+	}
+	h1 {
+		font-size: 48px;
+		color: black;
+	}
+	p {
+		font-size: 14px;
+		color: var(--color-gray);
+		width: 0;
+		min-width: 100%;
+	}
 }
 @media (min-width: 640px) {
-  .content h1 {
-    font-size: 65px;
-  }
+	.content h1 {
+		font-size: 65px;
+	}
 }
 @media (max-width: 400px) {
-  .content h1 {
-    font-size: 28px;
-  }
+	.content h1 {
+		font-size: 28px;
+	}
 }
 .vertical-align {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
 }
 .my-work {
-  position: absolute;
-  bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  flex-direction: column;
-  width: 80%;
-  cursor: pointer;
-  p {
-    font-size: 20px;
-  }
+	position: absolute;
+	bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-items: center;
+	flex-direction: column;
+	width: 80%;
+	cursor: pointer;
+	p {
+		font-size: 20px;
+	}
 }
 @media (max-width: 400px) {
-  .my-work {
-    width: 95%;
-  }
+	.my-work {
+		width: 95%;
+	}
 }
 .my-work .animation {
-  width: 50px;
-  margin: -30px 0 0 0;
-  -webkit-animation: arrow-animation 2s ease-in-out 0s infinite; // Safari, Chrome, Opera
-  -moz-animation: arrow-animation 2s ease-in-out 0s infinite; // Firefox
-  -ms-animation: arrow-animation 2s ease-in-out 0s infinite; // Internet Explorer
-  -o-animation: arrow-animation 2s ease-in-out 0s infinite; // Opera
-  animation: arrow-animation 2s ease-in-out 0s infinite;
+	width: 50px;
+	margin: -30px 0 0 0;
+	-webkit-animation: arrow-animation 2s ease-in-out 0s infinite; // Safari, Chrome, Opera
+	-moz-animation: arrow-animation 2s ease-in-out 0s infinite; // Firefox
+	-ms-animation: arrow-animation 2s ease-in-out 0s infinite; // Internet Explorer
+	-o-animation: arrow-animation 2s ease-in-out 0s infinite; // Opera
+	animation: arrow-animation 2s ease-in-out 0s infinite;
 }
 .hover-area {
-  width: calc(100%/3);
-  height: 100%;
-  position: absolute;
-  .card {
-    position: absolute;
-    bottom: 0;
-    height: 0;
-    width: 100%;
-    transition: all ease-in-out 0.25s;
-    color: black;
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-    p {
-      position: absolute;
-      bottom: 86px;
-    }
-  }
-  &:nth-child(1) {
-    left: 0;
-  }
-  &:nth-child(2) {
-    left: calc(100%/3);
-  }
-  &:nth-child(3) {
-    left: calc(calc(100%/3) * 2);
-  }
-  &:hover .card {
-    background-color: black;
-    color: white;
-    height: 100%;
-  }
+	width: calc(100% / 3);
+	height: 100%;
+	position: absolute;
+	.card {
+		position: absolute;
+		bottom: 0;
+		height: 0;
+		width: 100%;
+		transition: all ease-in-out 0.25s;
+		color: black;
+		display: flex;
+		justify-content: center;
+		font-size: 20px;
+		p {
+			position: absolute;
+			bottom: 86px;
+		}
+	}
+	&:nth-child(1) {
+		left: 0;
+	}
+	&:nth-child(2) {
+		left: calc(100% / 3);
+	}
+	&:nth-child(3) {
+		left: calc(calc(100% / 3) * 2);
+	}
+	&:hover .card {
+		background-color: black;
+		color: white;
+		height: 100%;
+	}
 }
 .card-content {
-  opacity: 0;
-  display: none;
-  transition: opacity 0.1s ease;
-  justify-items: start;
-  flex-direction: column;
-  width: 100%;
-  font-size: 10px;
+	opacity: 0;
+	display: none;
+	transition: opacity 0.1s ease;
+	justify-items: start;
+	flex-direction: column;
+	width: 100%;
+	font-size: 10px;
 }
 @media (min-width: 640px) {
-  .card-content {
-    font-size: 20px;
-    li {
-      margin: 0 20px;
-    }
-  }
+	.card-content {
+		font-size: 20px;
+		li {
+			margin: 0 20px;
+		}
+	}
 }
 .hover-area:hover .card-content {
-  display: flex;
-  opacity: 1;
+	display: flex;
+	opacity: 1;
 }
 .card-content li {
-  padding-top: 10px;
-  list-style: none;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 20px 0px;
-  margin: 0 -20px;
-  display: block;
-  position: relative;
-  opacity: 0.75;
-  cursor: pointer;
-  width: fit-content;
-  &:hover {
-    opacity: 1;
-    &::before {
-      width: 100%;
-    }
-  }
-  &::before {
-    transition: 300ms;
-    height: 5px;
-    content: "";
-    position: absolute;
-    background-color: #c8cbcf;
-    width: 0%;
-    bottom: 10px;
-  }
+	padding-top: 10px;
+	list-style: none;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 20px 0px;
+	margin: 0 -20px;
+	display: block;
+	position: relative;
+	opacity: 0.75;
+	cursor: pointer;
+	width: fit-content;
+	&:hover {
+		opacity: 1;
+		&::before {
+			width: 100%;
+		}
+	}
+	&::before {
+		transition: 300ms;
+		height: 5px;
+		content: "";
+		position: absolute;
+		background-color: #c8cbcf;
+		width: 0%;
+		bottom: 10px;
+	}
 }
 .modal-wrapper {
-  background-color: white;
-  color: black;
-  padding: 1.25rem;
-  text-align: left;
-  .projects {
-    margin-top: 1.25rem;
-    .title {
-      font-weight: bold;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      .project-card {
-        border-radius: 10px;
-        padding: 0.5rem;
-        position: relative;
-        border-width: 1px;
-        border-style: solid;
-        border-color: var(--color-neutral);
-        transition-property: border;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
-        &:hover {
-          border-bottom: 1px solid var(--color-gray);
-        }
-      }
-    }
-  }
+	background-color: white;
+	color: black;
+	padding: 1.25rem;
+	text-align: left;
+	.projects {
+		margin-top: 1.25rem;
+		.title {
+			font-weight: bold;
+			margin-bottom: 1rem;
+			text-transform: uppercase;
+		}
+		.projects-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1rem;
+			.project-card {
+				border-radius: 10px;
+				padding: 0.5rem;
+				position: relative;
+				border-width: 1px;
+				border-style: solid;
+				border-color: var(--color-neutral);
+				transition-property: border;
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+				transition-duration: 150ms;
+				&:hover {
+					border-bottom: 1px solid var(--color-gray);
+				}
+			}
+		}
+	}
 }
 @media (min-width: 400px) {
-  .modal-wrapper .projects .projects-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+	.modal-wrapper .projects .projects-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
 }
 .modal-language {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  text-transform: uppercase;
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+	text-transform: uppercase;
 }
 .mobile-modal {
-  background-color: white;
-  color: black;
+	background-color: white;
+	color: black;
 }
 .modal-title {
-  padding: 1.25rem;
+	padding: 1.25rem;
 }
 .mobile-card-content {
-  opacity: 1;
-  display: block;
-  font-size: 36px;
+	opacity: 1;
+	display: block;
+	font-size: 36px;
 }
 
 @keyframes arrow-animation {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(5px);}
-  100% { transform: translateY(0px);}
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(5px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 // Firefox
 @-moz-keyframes arrow-animation {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(5px);}
-  100% { transform: translateY(0px);}
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(5px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 // Safari, Chrome, Opera
 @-webkit-keyframes arrow-animation {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(5px);}
-  100% { transform: translateY(0px);}
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(5px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 // Internet Explorer
 @-ms-keyframes arrow-animation {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(5px);}
-  100% { transform: translateY(0px);}
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(5px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
 // Opera
 @-o-keyframes arrow-animation {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(5px);}
-  100% { transform: translateY(0px);}
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(5px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -18,7 +18,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 		HttpClientModule,
     NavbarComponent
 	],
-	providers: [],
+	providers: [
+    provideClientHydration()
+  ],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

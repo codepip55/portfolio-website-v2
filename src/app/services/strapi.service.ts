@@ -8,26 +8,19 @@ import { Observable, catchError, of } from 'rxjs';
 export class StrapiService {
 	constructor(private http: HttpClient) {}
 
+  private cmsUrl: string = 'http://localhost:1337/api'
+
 	private handleError<T>(err: any, res: T, action: string): Observable<T> {
 		console.error(err);
 		return of(res);
 	}
 
-	getHome() {
+	getBlogs(id: string) {
 		return this.http
-			.get(`https://cms.pepijncolenbrander.com/api/home?populate=*`)
+			.get(`${this.cmsUrl}/blogs/${id}?populate=*`)
 			.pipe(
-				catchError((err) => this.handleError(err, { user: null }, 'get name')),
+				catchError((err) => this.handleError(err, { blog: null }, 'get blogs')),
 			);
 	}
 
-	getLanguages() {
-		return this.http
-			.get(`https://cms.pepijncolenbrander.com/api/languages/?populate=*`)
-			.pipe(
-				catchError((err) =>
-					this.handleError(err, { user: null }, 'get languages'),
-				),
-			);
-	}
 }

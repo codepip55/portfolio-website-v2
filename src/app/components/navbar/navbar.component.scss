@@ -18,30 +18,29 @@
   }
   .folder-icon,
   .download-icon {
-    width: 20px;
-    margin-right: 5px;
+    width: 40px;
+    margin: 0 auto;
   }
   .folder-text,
   .download-text {
     text-align: center;
-    margin-right: 5px;
   }
   .projects {
     margin-top: 10px;
-    display: flex;
     width: 100%;
     margin: 10px auto;
-    justify-content: center;
   }
   .downloads {
     margin-top: 10px;
-    display: flex;
     width: 100%;
     margin: 10px auto;
-    justify-content: center;
   }
   .projects,
   .downloads {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     cursor: pointer;
+    margin-top: 5px;
   }
 }

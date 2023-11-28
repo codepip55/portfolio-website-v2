@@ -17,26 +17,26 @@
     margin: 10px auto;
   }
   .folder-icon,
-  .download-icon {
+  .download-icon,
+  .blog-icon {
     width: 40px;
     margin: 0 auto;
   }
   .folder-text,
-  .download-text {
+  .download-text,
+  .blog-text {
     text-align: center;
   }
-  .projects {
-    margin-top: 10px;
-    width: 100%;
-    margin: 10px auto;
-  }
-  .downloads {
+  .projects,
+  .downloads,
+  .blog {
     margin-top: 10px;
     width: 100%;
     margin: 10px auto;
   }
   .projects,
-  .downloads {
+  .downloads,
+  .blog {
     display: flex;
     flex-direction: column;
     justify-content: center;

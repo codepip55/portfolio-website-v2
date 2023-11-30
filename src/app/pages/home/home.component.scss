@@ -1,11 +1,31 @@
 .home-container {
   height: 100%;
-  width: 100%;
+  width: var(--body-width);
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  .titles {
+    margin-left: 50px;
+    .name {
+      font-size: 64px;
+      height: 74px;
+    }
+    .colenbrander {
+      margin-top: 10px;
+    }
+    .developer {
+      color: #868686;
+      font-size: 32px;
+      width: 361px;
+      height: 54px;
+      margin-top: 8px;
+    }
+  }
   .main-window {
-    margin-left: 610px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 42px;
     .text-container {
       width: 598px;
       height: 358px;

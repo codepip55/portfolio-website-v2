@@ -6,30 +6,36 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SeoService } from 'src/app/services/seo.service';
 
 @Component({
-  selector: 'app-project-info',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './project-info.component.html',
-  styleUrl: './project-info.component.scss'
+	selector: 'app-project-info',
+	standalone: true,
+	imports: [CommonModule],
+	templateUrl: './project-info.component.html',
+	styleUrl: './project-info.component.scss',
 })
 export class ProjectInfoComponent implements OnInit {
+	constructor(
+		private strapiService: StrapiService,
+		private activatedRoute: ActivatedRoute,
+		private seoService: SeoService,
+	) {}
 
-  constructor(private strapiService: StrapiService, private activatedRoute: ActivatedRoute, private seoService: SeoService) {}
+	public project;
 
-  public project;
+	ngOnInit(): void {
+		// @ts-ignore
+		this.getBlog(this.activatedRoute.snapshot.paramMap.get('id'));
+		this.seoService.generateTags(
+			this.project.data.attributes.title,
+			this.project.data.attributes.description,
+			this.project.data.attributes.cover_image,
+		);
+	}
 
-  ngOnInit(): void {
-    // @ts-ignore
-    this.getBlog(this.activatedRoute.snapshot.paramMap.get('id'))
-    this.seoService.generateTags(this.project.data.attributes.title, this.project.data.attributes.description, this.project.data.attributes.cover_image)
-  }
-
-  private async getProject(id: string) {
-    let project = this.strapiService.getBlogs(id)
-    // @ts-ignore
-    project = await lastValueFrom(project)
-    this.project = project;
-    console.log(project)
-  }
-
+	private async getProject(id: string) {
+		let project = this.strapiService.getBlogs(id);
+		// @ts-ignore
+		project = await lastValueFrom(project);
+		this.project = project;
+		console.log(project);
+	}
 }

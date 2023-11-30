@@ -1,46 +1,46 @@
 .content {
-  width: 120px;
-  height: 100vh;
-  border-right: 1px solid white;
-  .logo {
-    width: 60%;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    padding-top: 10px;
-    display: block;
-    cursor: pointer;
-  }
-  .divider {
-    background-color: white;
-    height: 1px;
-    width: 80%;
-    margin: 10px auto;
-  }
-  .folder-icon,
-  .download-icon,
-  .blog-icon {
-    width: 40px;
-    margin: 0 auto;
-  }
-  .folder-text,
-  .download-text,
-  .blog-text {
-    text-align: center;
-  }
-  .projects,
-  .downloads,
-  .blog {
-    margin-top: 10px;
-    width: 100%;
-    margin: 10px auto;
-  }
-  .projects,
-  .downloads,
-  .blog {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
-    margin-top: 5px;
-  }
+	width: 120px;
+	height: 100vh;
+	border-right: 1px solid white;
+	.logo {
+		width: 60%;
+		margin: 0 auto;
+		margin-bottom: 10px;
+		padding-top: 10px;
+		display: block;
+		cursor: pointer;
+	}
+	.divider {
+		background-color: white;
+		height: 1px;
+		width: 80%;
+		margin: 10px auto;
+	}
+	.folder-icon,
+	.download-icon,
+	.blog-icon {
+		width: 40px;
+		margin: 0 auto;
+	}
+	.folder-text,
+	.download-text,
+	.blog-text {
+		text-align: center;
+	}
+	.projects,
+	.downloads,
+	.blog {
+		margin-top: 10px;
+		width: 100%;
+		margin: 10px auto;
+	}
+	.projects,
+	.downloads,
+	.blog {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		cursor: pointer;
+		margin-top: 5px;
+	}
 }

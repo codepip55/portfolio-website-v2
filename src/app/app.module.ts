@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+	BrowserModule,
+	provideClientHydration,
+} from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -9,19 +12,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { WindowComponent } from './components/window/window.component';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-	],
+	declarations: [AppComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
-    NavbarComponent,
+		NavbarComponent,
 	],
-	providers: [
-    provideClientHydration()
-  ],
+	providers: [provideClientHydration()],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

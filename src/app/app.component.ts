@@ -9,5 +9,4 @@ export class AppComponent {
 	constructor() {}
 
 	title = "Pepijn's Portfolio";
-
 }

@@ -8,7 +8,7 @@ import { Observable, catchError, of } from 'rxjs';
 export class StrapiService {
 	constructor(private http: HttpClient) {}
 
-  private cmsUrl: string = 'http://localhost:1337/api'
+	private cmsUrl: string = 'http://localhost:1337/api';
 
 	private handleError<T>(err: any, res: T, action: string): Observable<T> {
 		console.error(err);
@@ -22,5 +22,4 @@ export class StrapiService {
 				catchError((err) => this.handleError(err, { blog: null }, 'get blogs')),
 			);
 	}
-
 }

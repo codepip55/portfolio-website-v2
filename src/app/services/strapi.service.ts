@@ -8,18 +8,33 @@ import { Observable, catchError, of } from 'rxjs';
 export class StrapiService {
 	constructor(private http: HttpClient) {}
 
-	private cmsUrl: string = 'http://localhost:1337/api';
+	private cmsUrl: string = 'https://cms-staging.pepijncolenbrander.com/api';
 
 	private handleError<T>(err: any, res: T, action: string): Observable<T> {
 		console.error(err);
 		return of(res);
 	}
 
-	getBlogs(id: string) {
+	getBlog(id: string) {
 		return this.http
 			.get(`${this.cmsUrl}/blogs/${id}?populate=*`)
 			.pipe(
-				catchError((err) => this.handleError(err, { blog: null }, 'get blogs')),
+				catchError((err) => this.handleError(err, { blog: null }, 'get blog')),
 			);
+	}
+	getBlogs() {
+		return this.http.get(`${this.cmsUrl}/blogs?populate=*`).pipe(
+			catchError((err) => this.handleError(err, { blogs: null }, 'get blogs')),
+		);
+	}
+	getProject(id: string) {
+		return this.http.get(`${this.cmsUrl}/projects/${id}?populate=*`).pipe(
+			catchError((err) => this.handleError(err, { project: null }, 'get project')),
+		);
+	}
+	getProjects() {
+		return this.http.get(`${this.cmsUrl}/projects?populate=*`).pipe(
+			catchError((err) => this.handleError(err, { projects: null }, 'get projects')),
+		);
 	}
 }

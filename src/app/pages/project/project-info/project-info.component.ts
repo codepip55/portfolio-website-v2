@@ -32,7 +32,7 @@ export class ProjectInfoComponent implements OnInit {
 	}
 
 	private async getProject(id: string) {
-		let project = this.strapiService.getBlogs(id);
+		let project = this.strapiService.getProject(id);
 		// @ts-ignore
 		project = await lastValueFrom(project);
 		this.project = project;

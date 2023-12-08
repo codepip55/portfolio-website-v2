@@ -32,7 +32,7 @@ export class BlogPageComponent implements OnInit {
 	}
 
 	private async getBlog(id: string) {
-		let blog = this.strapiService.getBlogs(id);
+		let blog = this.strapiService.getBlog(id);
 		// @ts-ignore
 		blog = await lastValueFrom(blog);
 		this.blog = blog;

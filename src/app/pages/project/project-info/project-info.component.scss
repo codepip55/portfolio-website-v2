@@ -1,6 +1,6 @@
-.blog-container {
+.project-container {
 	width: calc(100vw - 120px);
-	.blog-hero {
+	.project-hero {
 		position: relative;
 		img {
 			width: 100%;
@@ -20,7 +20,7 @@
 			);
 		}
 	}
-	.blog-text {
+	.project-text {
 		width: 80%;
 		margin: auto;
 		position: relative;
@@ -28,6 +28,8 @@
 			font-size: 128px;
 			text-transform: capitalize;
 			margin-top: -130px;
+		}
+		.body {
 		}
 	}
 }

@@ -57,19 +57,19 @@
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"configurations": {
-            "production": {
-              "buildTarget": "portfolio-website-v2:build:production"
+						"production": {
+							"buildTarget": "portfolio-website-v2:build:production"
 						},
-            "development": {
-              "buildTarget": "portfolio-website-v2:build:development"
+						"development": {
+							"buildTarget": "portfolio-website-v2:build:development"
 						}
 					},
 					"defaultConfiguration": "development"
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "buildTarget": "portfolio-website-v2:build"
+					"options": {
+						"buildTarget": "portfolio-website-v2:build"
 					}
 				},
 				"test": {
@@ -82,66 +82,64 @@
 						"styles": ["src/styles.scss"],
 						"scripts": []
 					}
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/portfolio-website-v2/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media"
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@angular-devkit/build-angular:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "portfolio-website-v2:build:development",
-              "serverTarget": "portfolio-website-v2:server:development"
-            },
-            "production": {
-              "browserTarget": "portfolio-website-v2:build:production",
-              "serverTarget": "portfolio-website-v2:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@angular-devkit/build-angular:prerender",
-          "options": {
-            "routes": [
-              "/"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "portfolio-website-v2:build:production",
-              "serverTarget": "portfolio-website-v2:server:production"
-            },
-            "development": {
-              "browserTarget": "portfolio-website-v2:build:development",
-              "serverTarget": "portfolio-website-v2:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
-        }
+				},
+				"server": {
+					"builder": "@angular-devkit/build-angular:server",
+					"options": {
+						"outputPath": "dist/portfolio-website-v2/server",
+						"main": "server.ts",
+						"tsConfig": "tsconfig.server.json",
+						"inlineStyleLanguage": "scss"
+					},
+					"configurations": {
+						"production": {
+							"outputHashing": "media"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"sourceMap": true,
+							"extractLicenses": false,
+							"vendorChunk": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve-ssr": {
+					"builder": "@angular-devkit/build-angular:ssr-dev-server",
+					"configurations": {
+						"development": {
+							"browserTarget": "portfolio-website-v2:build:development",
+							"serverTarget": "portfolio-website-v2:server:development"
+						},
+						"production": {
+							"browserTarget": "portfolio-website-v2:build:production",
+							"serverTarget": "portfolio-website-v2:server:production"
+						}
+					},
+					"defaultConfiguration": "development"
+				},
+				"prerender": {
+					"builder": "@angular-devkit/build-angular:prerender",
+					"options": {
+						"routes": ["/"]
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "portfolio-website-v2:build:production",
+							"serverTarget": "portfolio-website-v2:server:production"
+						},
+						"development": {
+							"browserTarget": "portfolio-website-v2:build:development",
+							"serverTarget": "portfolio-website-v2:server:development"
+						}
+					},
+					"defaultConfiguration": "production"
+				}
 			}
 		}
-  },
-  "cli": {
-    "analytics": false
-  }
+	},
+	"cli": {
+		"analytics": false
+	}
 }

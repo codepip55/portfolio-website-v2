@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StrapiService } from 'src/app/services/strapi.service';
-import { lastValueFrom } from 'rxjs';
+import { firstValueFrom, lastValueFrom } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SeoService } from 'src/app/services/seo.service';
 
@@ -32,10 +32,11 @@ export class BlogPageComponent implements OnInit {
 	}
 
 	private async getBlog(id: string) {
-		let blog = this.strapiService.getBlogs(id);
-		// @ts-ignore
-		blog = await lastValueFrom(blog);
-		this.blog = blog;
-		console.log(blog);
+		let blog = this.strapiService.getBlog(id);
+		let blogSub = blog.subscribe((b) => {
+			this.blog = b;
+			console.log(b);
+		});
+		console.log(this.blog);
 	}
 }

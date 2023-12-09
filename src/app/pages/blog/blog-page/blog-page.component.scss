@@ -1,5 +1,5 @@
 .blog-container {
-	width: calc(100vw - 120px);
+	width: var(--body-width);
 	.blog-hero {
 		position: relative;
 		img {
@@ -8,7 +8,7 @@
 			object-fit: cover;
 		}
 		.image-cover {
-			height: 150px;
+			height: 100px;
 			width: 100%;
 			position: absolute;
 			bottom: 0;
@@ -25,9 +25,8 @@
 		margin: auto;
 		position: relative;
 		.title {
-			font-size: 128px;
+			font-size: clamp(3rem, 2vw, 8rem);
 			text-transform: capitalize;
-			margin-top: -130px;
 		}
 	}
 }

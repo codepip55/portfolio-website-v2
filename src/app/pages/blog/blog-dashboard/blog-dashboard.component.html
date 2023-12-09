@@ -12,7 +12,7 @@
 			/>
 			<div class="text">
 				<div class="title">{{ blog.attributes.title }}</div>
-				<div class="body">{{ blog.attributes.body }}</div>
+				<div class="body">{{ blog.attributes.body | htmlStrip }}</div>
 			</div>
 		</div>
 	</div>

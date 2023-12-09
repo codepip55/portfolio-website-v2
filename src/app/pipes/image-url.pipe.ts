@@ -1,4 +1,3 @@
-// image-url.pipe.ts
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

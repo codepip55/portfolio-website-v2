@@ -42,6 +42,20 @@
 					margin-top: 20px;
 				}
 			}
+			.read-more {
+				display: flex;
+				align-items: center;
+				img {
+					color: white;
+					transition: all .3 ease;
+					margin-top: max(-0.1515151515vw,-0.3rem);
+					margin-left: max(0.5050505051vw,1rem);
+					font-size: max(.7575757576vw,1.5rem);
+				}
+			}
+			&:hover .read-more img {
+				margin-left: max(2.0202020202vw,4rem);
+			}
 		}
 	}
 }

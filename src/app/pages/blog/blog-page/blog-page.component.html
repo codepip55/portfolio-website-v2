@@ -5,6 +5,9 @@
 	</div>
 	<div class="blog-text">
 		<div class="title">{{ blog.data.attributes.title }}</div>
-		<div class="body">{{ blog.data.attributes.body }}</div>
+		<div
+			class="body ck-content"
+			[innerHTML]="blog.data.attributes.body | imageUrl"
+		></div>
 	</div>
 </div>

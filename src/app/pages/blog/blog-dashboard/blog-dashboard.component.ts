@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StrapiService } from 'src/app/services/strapi.service';
 import { Router } from '@angular/router';
+import { StripHtmlPipe } from 'src/app/pipes/strip-html.pipe';
 
 @Component({
 	selector: 'app-blog-dashboard',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, StripHtmlPipe],
 	templateUrl: './blog-dashboard.component.html',
 	styleUrl: './blog-dashboard.component.scss',
 })

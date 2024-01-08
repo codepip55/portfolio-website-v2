@@ -1,0 +1,23 @@
+:host {
+	svg {
+		animation: spin 1.4s infinite;
+	}
+	&.size-sm svg {
+		width: 1rem;
+	}
+	&.size-md svg {
+		width: 2rem;
+	}
+	&.size-lg svg {
+		width: 3rem;
+	}
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}

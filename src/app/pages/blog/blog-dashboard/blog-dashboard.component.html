@@ -2,7 +2,9 @@
 	<div class="header">
 		<h1>What we've written <strong>for you</strong></h1>
 	</div>
+	
 	<div class="grid">
+		<app-loader size="lg" *ngIf="loading"></app-loader>
 		<div
 			class="blog-post"
 			*ngFor="let blog of blogPosts"

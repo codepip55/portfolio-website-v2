@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { WindowComponent } from './components/window/window.component';
 
 @NgModule({
 	declarations: [AppComponent],

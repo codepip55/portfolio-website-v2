@@ -1,5 +1,10 @@
 <div class="dashboard-container">
+	<div class="header">
+		<h1>What we've written <strong>for you</strong></h1>
+	</div>
+	
 	<div class="grid">
+		<app-loader size="lg" *ngIf="loading"></app-loader>
 		<div
 			class="blog-post"
 			*ngFor="let blog of blogPosts"
@@ -11,8 +16,22 @@
 				class="cover-image"
 			/>
 			<div class="text">
-				<div class="title">{{ blog.attributes.title }}</div>
-				<div class="body">{{ blog.attributes.body }}</div>
+				<div class="title">
+					<mark>{{ blog.attributes.title }}</mark>
+				</div>
+				<div class="published-on">
+					Published on
+					{{ blog.attributes.publishedAt | date: "EEEE, MMMM d, y" }}
+				</div>
+				<div class="body">{{ blog.attributes.body | htmlStrip }}</div>
+
+				<span class="read-more">
+					read more
+					<img
+						src="../../../../assets/svg/icons/arrow-right-solid.svg"
+						alt="read-more-arrow"
+					/>
+				</span>
 			</div>
 		</div>
 	</div>

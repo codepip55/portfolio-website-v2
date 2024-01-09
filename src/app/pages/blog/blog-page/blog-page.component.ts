@@ -4,11 +4,12 @@ import { StrapiService } from 'src/app/services/strapi.service';
 import { firstValueFrom, lastValueFrom } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SeoService } from 'src/app/services/seo.service';
+import { ImageUrlPipe } from 'src/app/pipes/image-url.pipe';
 
 @Component({
 	selector: 'app-blog-page',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, ImageUrlPipe],
 	templateUrl: './blog-page.component.html',
 	styleUrl: './blog-page.component.scss',
 })

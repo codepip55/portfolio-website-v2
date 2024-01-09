@@ -1,7 +1,7 @@
 .dashboard-container {
 	width: var(--body-width);
 	.header h1 {
-		font-size: 5rem;
+		font-size: 3rem;
 		font-weight: 100;
 		text-align: center;
 	}
@@ -44,7 +44,7 @@
 			.text {
 				width: 60%;
 				margin: 10px auto;
-				padding: 2rem 0 2rem 6rem;
+				padding: 0 0 2rem 6rem;
 				justify-content: center;
 				align-items: flex-start;
 				.title mark {

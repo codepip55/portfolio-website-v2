@@ -12,6 +12,4 @@ RUN npm run build:ssr
 
 FROM nginx:1.17.1-alpine
 
-COPY nginx.conf /etc/nginx/nginx.conf
-
 COPY --from=build /usr/src/dist/portfolio-website-v2 /usr/share/nginx/html

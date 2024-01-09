@@ -10,9 +10,9 @@
 		"bump-version": "node ./scripts/bump-version.js",
 		"dev:ssr": "ng run portfolio-website-v2:serve-ssr",
 		"serve:ssr": "node dist/portfolio-website-v2/server/main.js",
-		"build:ssr": "npx ng build && npx ng run portfolio-website-v2:server",
+		"build:ssr": "ng build && ng run portfolio-website-v2:server",
 		"prerender": "ng run portfolio-website-v2:prerender",
-		"prepare": "npx husky install"
+		"prepare": "husky install"
 	},
 	"private": true,
 	"dependencies": {

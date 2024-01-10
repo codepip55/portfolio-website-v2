@@ -10,6 +10,4 @@ RUN npm install --include dev
 
 RUN npm run build:ssr
 
-FROM nginx:1.17.1-alpine
-
-COPY --from=build /usr/src/dist/portfolio-website-v2 /usr/share/nginx/html
+CMD ["npm", "run", "serve:ssr"]

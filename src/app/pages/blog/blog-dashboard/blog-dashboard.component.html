@@ -2,28 +2,24 @@
 	<div class="header">
 		<h1>What we've written <strong>for you</strong></h1>
 	</div>
-	
+
 	<div class="grid">
 		<app-loader size="lg" *ngIf="loading"></app-loader>
-		<div
-			class="blog-post"
-			*ngFor="let blog of blogPosts"
-			(click)="navigateToBlog(blog.id)"
-		>
+		<div class="blog-post" (click)="navigateToBlog(blogPosts[0].id)">
 			<img
-				src="{{ blog.attributes.cover_image }}"
+				src="{{ blogPosts[0].attributes.cover_image }}"
 				alt="cover_image"
 				class="cover-image"
 			/>
 			<div class="text">
 				<div class="title">
-					<mark>{{ blog.attributes.title }}</mark>
+					<mark>{{ blogPosts[0].attributes.title }}</mark>
 				</div>
 				<div class="published-on">
 					Published on
-					{{ blog.attributes.publishedAt | date: "EEEE, MMMM d, y" }}
+					{{ blogPosts[0].attributes.publishedAt | date: "EEEE, MMMM d, y" }}
 				</div>
-				<div class="body">{{ blog.attributes.body | htmlStrip }}</div>
+				<div class="body">{{ blogPosts[0].attributes.body | htmlStrip }}</div>
 
 				<span class="read-more">
 					read more
@@ -32,6 +28,38 @@
 						alt="read-more-arrow"
 					/>
 				</span>
+			</div>
+		</div>
+
+		<div class="blog-grid">
+			<div
+				class="blog-post"
+				*ngFor="let blog of blogPosts | slice: 1"
+				(click)="navigateToBlog(blog.id)"
+			>
+				<img
+					src="{{ blog.attributes.cover_image }}"
+					alt="cover_image"
+					class="cover-image"
+				/>
+				<div class="text">
+					<div class="title">
+						<mark>{{ blog.attributes.title }}</mark>
+					</div>
+					<div class="published-on">
+						Published on
+						{{ blog.attributes.publishedAt | date: "EEEE, MMMM d, y" }}
+					</div>
+					<div class="body">{{ blog.attributes.body | htmlStrip }}</div>
+
+					<span class="read-more">
+						read more
+						<img
+							src="../../../../assets/svg/icons/arrow-right-solid.svg"
+							alt="read-more-arrow"
+						/>
+					</span>
+				</div>
 			</div>
 		</div>
 	</div>

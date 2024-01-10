@@ -12,7 +12,7 @@
 		"serve:ssr": "node dist/portfolio-website-v2/server/main.js",
 		"build:ssr": "ng build && ng run portfolio-website-v2:server",
 		"prerender": "ng run portfolio-website-v2:prerender",
-		"prepare": "husky install"
+		"prepare": "npx husky install"
 	},
 	"private": true,
 	"dependencies": {

@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StrapiService } from 'src/app/services/strapi.service';
-import { firstValueFrom, lastValueFrom } from 'rxjs';
+import { Subscription, firstValueFrom, lastValueFrom } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SeoService } from 'src/app/services/seo.service';
 import { ImageUrlPipe } from 'src/app/pipes/image-url.pipe';
+import { LoaderComponent } from 'src/app/components/loader/loader.component';
 
 @Component({
 	selector: 'app-blog-page',
 	standalone: true,
-	imports: [CommonModule, ImageUrlPipe],
+	imports: [CommonModule, ImageUrlPipe, LoaderComponent],
 	templateUrl: './blog-page.component.html',
 	styleUrl: './blog-page.component.scss',
 })
@@ -21,10 +22,15 @@ export class BlogPageComponent implements OnInit {
 	) {}
 
 	public blog;
+	public loading: boolean = false;
 
 	ngOnInit(): void {
+		this.loading = true;
+
 		// @ts-ignore
-		this.getBlog(this.activatedRoute.snapshot.paramMap.get('id'));
+		this.getBlog(this.activatedRoute.snapshot.paramMap.get('id')).then(() => {
+			this.loading = false;
+		});
 		this.seoService.generateTags(
 			this.blog.data.attributes.title,
 			this.blog.data.attributes.description,
@@ -32,12 +38,12 @@ export class BlogPageComponent implements OnInit {
 		);
 	}
 
-	private async getBlog(id: string) {
+	private async getBlog(id: string): Promise<Subscription> {
 		let blog = this.strapiService.getBlog(id);
 		let blogSub = blog.subscribe((b) => {
 			this.blog = b;
 			console.log(b);
 		});
-		console.log(this.blog);
+		return await blogSub;
 	}
 }

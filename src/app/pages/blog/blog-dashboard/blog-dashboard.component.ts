@@ -18,15 +18,21 @@ export class BlogDashboardComponent implements OnInit {
 		private router: Router,
 	) {}
 
-	public blogPosts: any = [];
+	public blogPosts: any[] = [];
 	public loading: boolean = false;
 
 	ngOnInit(): void {
 		this.loading = true;
 
-		this.strapiService.getBlogs().subscribe((b: any) => {
-			this.blogPosts = b.data;
-			console.log(b.data);
+		this.strapiService.getBlogs().subscribe((blogs: any) => {
+			let unsortedBlogs = blogs.data;
+			let sortedBlogs = unsortedBlogs.sort(
+				(a, b) =>
+					new Date(b.attributes.publishedAt).getTime() -
+					new Date(a.attributes.publishedAt).getTime(),
+			);
+			this.blogPosts = sortedBlogs;
+			console.log(sortedBlogs);
 		});
 
 		this.loading = false;

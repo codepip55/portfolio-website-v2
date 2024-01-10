@@ -1,9 +1,13 @@
 <div class="blog-container">
 	<div class="blog-hero">
-		<img src="{{ blog.data.attributes.cover_image }}" alt="cover-image" />
+		<img src="{{ blog.data.attributes.cover_image }}" alt="" />
 		<div class="image-cover"></div>
 	</div>
 	<div class="blog-text">
+		<a href="/blog" class="return-link" *ngIf="!loading"
+			><mark>Return to dashboard</mark></a
+		>
+		<app-loader size="md" *ngIf="loading"></app-loader>
 		<div class="title">{{ blog.data.attributes.title }}</div>
 		<div
 			class="body ck-content"

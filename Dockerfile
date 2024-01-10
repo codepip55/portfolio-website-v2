@@ -8,7 +8,9 @@ ENV NODE_ENV=production
 
 RUN npm install
 
-RUN npm run build:ssr
+RUN node_modules/.bin/ng build 
+
+RUN node_modules/.bin/ng run portfolio-website-v2:server
 
 FROM nginx:1.17.1-alpine
 

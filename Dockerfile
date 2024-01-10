@@ -1,4 +1,4 @@
-FROM node:20 AS build
+FROM node:20.10-alpine AS build
 
 COPY . /usr/src
 

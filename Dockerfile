@@ -6,11 +6,9 @@ WORKDIR /usr/src
 
 ENV NODE_ENV=production
 
-RUN npm install
+RUN npm install --include dev
 
-RUN npx ng build
-
-RUN npx ng run portfolio-website-v2:server
+RUN npm run build:ssr
 
 FROM nginx:1.17.1-alpine
 

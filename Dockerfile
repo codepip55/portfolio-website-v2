@@ -8,6 +8,6 @@ ENV NODE_ENV=production
 
 RUN npm install --include dev
 
-RUN npm run start:ssr
+RUN npm run prepare:ssr
 
 CMD ["npm", "run", "serve:ssr"]

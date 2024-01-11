@@ -11,8 +11,10 @@
 		"dev:ssr": "ng run portfolio-website-v2:serve-ssr",
 		"serve:ssr": "node dist/portfolio-website-v2/server/main.js",
 		"build:ssr": "ng build && ng run portfolio-website-v2:server",
-		"prerender": "ng run portfolio-website-v2:prerender",
-		"prepare": "husky install"
+		"prerender": "node scripts/generate-routes-file.js && ng run portfolio-website-v2:prerender",
+		"prepare": "husky install",
+		"start:ssr": "npm run build:ssr && npm run prerender && npm run serve:ssr",
+		"develop": "npm run build:ssr && npm run prerender && npm run dev:ssr"
 	},
 	"private": true,
 	"dependencies": {

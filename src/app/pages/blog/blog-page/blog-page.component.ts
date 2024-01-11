@@ -27,22 +27,23 @@ export class BlogPageComponent implements OnInit {
 	ngOnInit(): void {
 		this.loading = true;
 
+		let blogId = this.activatedRoute.snapshot.paramMap.get('id');
 		// @ts-ignore
-		this.getBlog(this.activatedRoute.snapshot.paramMap.get('id')).then(() => {
+		this.getBlog(blogId).then(() => {
 			this.loading = false;
 		});
-		this.seoService.generateTags(
-			this.blog.data.attributes.title,
-			this.blog.data.attributes.description,
-			this.blog.data.attributes.cover_image,
-		);
 	}
 
 	private async getBlog(id: string): Promise<Subscription> {
 		let blog = this.strapiService.getBlog(id);
-		let blogSub = blog.subscribe((b) => {
+		let blogSub = blog.subscribe((b: any) => {
 			this.blog = b;
-			console.log(b);
+
+			this.seoService.generateTags(
+				b.data.attributes.title,
+				b.data.attributes.description,
+				b.data.attributes.cover_image,
+			);
 		});
 		return await blogSub;
 	}

@@ -17,7 +17,7 @@
 				"build": {
 					"builder": "@angular-devkit/build-angular:application",
 					"options": {
-						"outputPath": "dist/portfolio-website-v2/browser",
+						"outputPath": "dist/portfolio-website-v2/",
 						"index": "src/index.html",
 						"browser": "src/main.ts",
 						"polyfills": ["zone.js"],
@@ -25,10 +25,7 @@
 						"inlineStyleLanguage": "scss",
 						"assets": ["src/favicon.ico", "src/assets"],
 						"styles": ["src/styles.scss"],
-						"scripts": [],
-						"prerender": {
-							"routesFile": "routes.txt"
-						}
+						"scripts": []
 					},
 					"configurations": {
 						"production": {
@@ -123,7 +120,8 @@
 				"prerender": {
 					"builder": "@angular-devkit/build-angular:prerender",
 					"options": {
-						"routes": ["/"]
+						"routes": ["/"],
+						"routesFile": "routes.txt"
 					},
 					"configurations": {
 						"production": {

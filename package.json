@@ -13,7 +13,7 @@
 		"build:ssr": "ng build && ng run portfolio-website-v2:server",
 		"prerender": "node scripts/generate-routes-file.js && ng run portfolio-website-v2:prerender",
 		"prepare": "husky install",
-		"prepare:ssr": "npm run build:ssr && npm run prerender",
+		"prepare:ssr": "npm run build:ssr && ng run portfolio-website-v2:prerender",
 		"develop": "npm run build:ssr && npm run prerender && npm run dev:ssr"
 	},
 	"private": true,

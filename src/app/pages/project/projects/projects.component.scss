@@ -1,0 +1,142 @@
+.page-container {
+	max-width: 80%;
+	margin: 3rem auto;
+	.grid {
+		clear: both;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin-left: -1rem;
+		margin-right: -1rem;
+		.grid-cell {
+			box-sizing: border-box;
+			display: inline-block;
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			margin-top: 3rem;
+			padding-left: 1rem;
+			padding-right: 1rem;
+			position: relative;
+		}
+	}
+}
+.text-cell {
+	max-width: 37.5%;
+	flex-basis: 37.5%;
+	.label {
+		font-size: 0.75rem;
+	}
+	.title {
+		margin-bottom: 2rem;
+		border-top: 1px solid white;
+		line-height: 1.1;
+		margin-top: 0.6rem;
+		padding-top: 0.4em;
+		white-space: normal;
+		h1 {
+			font-size: 6rem;
+		}
+	}
+	.description {
+		width: 80%;
+	}
+}
+.image-cell {
+	max-width: 43.75%;
+	flex-basis: 43.75%;
+	margin-left: 6.25%;
+	order: 0;
+	height: auto;
+	.image-container {
+		width: auto !important;
+		margin-left: 0;
+		margin-right: 0;
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+		}
+		.col-1 {
+			float: none !important;
+			width: auto !important;
+			.sqs-block {
+				height: auto;
+				.photo {
+					box-shadow: 0 18px 24px rgba(0, 0, 0, 0.06);
+					overflow: hidden;
+					position: relative;
+					width: 100%;
+				}
+				.frame {
+					color: white;
+					height: 100%;
+					left: 0;
+					pointer-events: none;
+					position: absolute;
+					top: 0;
+					width: 100%;
+					z-index: 1;
+					.frame-side-top,
+					.frame-side-bottom,
+					.frame-side-right,
+					.frame-side-left {
+						color: white;
+					}
+					.frame-side-top {
+						top: 20px;
+						height: 2px;
+						left: 20px;
+						right: 20px;
+						position: absolute;
+					}
+					.frame-side-bottom {
+						bottom: 20px;
+						height: 2px;
+						left: 20px;
+						right: 20px;
+						position: absolute;
+						width: 100%;
+					}
+					.frame-side-left {
+						left: 20px;
+						bottom: 20px;
+						top: 20px;
+						width: 2px;
+						position: absolute;
+						height: 100%;
+					}
+					.frame-side-right {
+						right: 20px;
+						bottom: 20px;
+						top: 20px;
+						width: 2px;
+						position: absolute;
+						height: 100%;
+						.frame-part-one {
+							bottom: calc(100% - 30% - var(--frame-break, 0) * 30%);
+							top: 0;
+							left: 0;
+							right: 0;
+							transition:
+								top 800ms ease-out,
+								bottom 800ms ease-out;
+							position: absolute;
+						}
+						.frame-part-two {
+							bottom: 0;
+							top: calc(var(--frame-break, 0) * 30% + 30% + 10%);
+							left: 0;
+							right: 0;
+							transition:
+								top 800ms ease-out,
+								bottom 800ms ease-out;
+							position: absolute;
+						}
+					}
+				}
+			}
+		}
+	}
+}

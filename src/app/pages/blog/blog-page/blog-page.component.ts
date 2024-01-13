@@ -41,7 +41,7 @@ export class BlogPageComponent implements OnInit {
 
 			this.seoService.generateTags(
 				b.data.attributes.title,
-				b.data.attributes.description,
+				b.data.attributes.body,
 				b.data.attributes.cover_image,
 			);
 		});

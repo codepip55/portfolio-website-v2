@@ -1,10 +1,17 @@
 <div class="project-container">
 	<div class="project-hero">
-		<img src="{{ project.data.attributes.cover_image }}" alt="cover-image" />
+		<img src="{{ project.data.attributes.cover_image }}" alt="" />
 		<div class="image-cover"></div>
 	</div>
 	<div class="project-text">
+		<a href="/projects" class="return-link" *ngIf="!loading"
+			><mark>Return to dashboard</mark></a
+		>
+		<app-loader size="md" *ngIf="loading"></app-loader>
 		<div class="title">{{ project.data.attributes.title }}</div>
-		<div class="body">{{ project.data.attributes.body }}</div>
+		<div
+			class="body ck-content"
+			[innerHTML]="project.data.attributes.body | imageUrl"
+		></div>
 	</div>
 </div>

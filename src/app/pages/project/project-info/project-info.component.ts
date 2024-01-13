@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StrapiService } from 'src/app/services/strapi.service';
-import { lastValueFrom } from 'rxjs';
+import { Subscription, lastValueFrom } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SeoService } from 'src/app/services/seo.service';
+import { ImageUrlPipe } from 'src/app/pipes/image-url.pipe';
+import { LoaderComponent } from 'src/app/components/loader/loader.component';
 
 @Component({
 	selector: 'app-project-info',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, ImageUrlPipe, LoaderComponent],
 	templateUrl: './project-info.component.html',
 	styleUrl: './project-info.component.scss',
 })
@@ -19,23 +21,27 @@ export class ProjectInfoComponent implements OnInit {
 		private seoService: SeoService,
 	) {}
 
-	public project;
+	public project: any;
+	public loading: boolean = false;
 
 	ngOnInit(): void {
+		this.loading = true;
 		// @ts-ignore
-		this.getBlog(this.activatedRoute.snapshot.paramMap.get('id'));
-		this.seoService.generateTags(
-			this.project.data.attributes.title,
-			this.project.data.attributes.description,
-			this.project.data.attributes.cover_image,
-		);
+		this.getProject(this.activatedRoute.snapshot.paramMap.get('id'));
+		this.loading = false;
 	}
 
-	private async getProject(id: string) {
+	private async getProject(id: string): Promise<Subscription> {
 		let project = this.strapiService.getProject(id);
-		// @ts-ignore
-		project = await lastValueFrom(project);
-		this.project = project;
-		console.log(project);
+		let projectSub = project.subscribe((b: any) => {
+			this.project = b;
+
+			this.seoService.generateTags(
+				b.data.attributes.title,
+				b.data.attributes.description,
+				b.data.attributes.cover_image,
+			);
+		});
+		return await projectSub;
 	}
 }

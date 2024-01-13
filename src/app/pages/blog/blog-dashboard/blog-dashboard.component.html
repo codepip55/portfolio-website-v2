@@ -4,7 +4,9 @@
 	</div>
 
 	<div class="grid">
-		<app-loader size="lg" *ngIf="loading"></app-loader>
+		@if (loading) {
+			<app-loader size="lg"></app-loader>
+		}
 		<div class="blog-post" (click)="navigateToBlog(blogPosts[0].id)">
 			<img
 				src="{{ blogPosts[0].attributes.cover_image }}"
@@ -32,35 +34,39 @@
 		</div>
 
 		<div class="blog-grid">
-			<div
-				class="blog-post"
-				*ngFor="let blog of blogPosts | slice: 1"
-				(click)="navigateToBlog(blog.id)"
-			>
-				<img
-					src="{{ blog.attributes.cover_image }}"
-					alt=""
-					class="cover-image"
-				/>
-				<div class="text">
-					<div class="title">
-						<mark>{{ blog.attributes.title }}</mark>
-					</div>
-					<div class="published-on">
-						Published on
-						{{ blog.attributes.publishedAt | date: "EEEE, MMMM d, y" }}
-					</div>
-					<div class="body">{{ blog.attributes.body | htmlStrip }}</div>
-
-					<span class="read-more">
-						read more
+			@for (
+				blog of blogPosts;
+				track blog.attributes.title;
+				let first = $first
+			) {
+				@if (!first) {
+					<div class="blog-post" (click)="navigateToBlog(blog.id)">
 						<img
-							src="../../../../assets/svg/icons/arrow-right-solid.svg"
-							alt="read-more-arrow"
+							src="{{ blog.attributes.cover_image }}"
+							alt=""
+							class="cover-image"
 						/>
-					</span>
-				</div>
-			</div>
+						<div class="text">
+							<div class="title">
+								<mark>{{ blog.attributes.title }}</mark>
+							</div>
+							<div class="published-on">
+								Published on
+								{{ blog.attributes.publishedAt | date: "EEEE, MMMM d, y" }}
+							</div>
+							<div class="body">{{ blog.attributes.body | htmlStrip }}</div>
+
+							<span class="read-more">
+								read more
+								<img
+									src="../../../../assets/svg/icons/arrow-right-solid.svg"
+									alt="read-more-arrow"
+								/>
+							</span>
+						</div>
+					</div>
+				}
+			}
 		</div>
 	</div>
 </div>

@@ -4,14 +4,15 @@
 		<div class="image-cover"></div>
 	</div>
 	<div class="blog-text">
-		<a href="/blog" class="return-link" *ngIf="!loading"
-			><mark>Return to dashboard</mark></a
-		>
-		<app-loader size="md" *ngIf="loading"></app-loader>
-		<div class="title">{{ blog.data.attributes.title }}</div>
-		<div
-			class="body ck-content"
-			[innerHTML]="blog.data.attributes.body | imageUrl"
-		></div>
+		@if (!loading) {
+			<a href="/blog" class="return-link"><mark>Return to dashboard</mark></a>
+			<div class="title">{{ blog.data.attributes.title }}</div>
+			<div
+				class="body ck-content"
+				[innerHTML]="blog.data.attributes.body | imageUrl"
+			></div>
+		} @else {
+			<app-loader size="md"></app-loader>
+		}
 	</div>
 </div>

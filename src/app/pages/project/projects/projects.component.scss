@@ -21,9 +21,15 @@
 		}
 	}
 }
-.text-cell {
+.size-1 {
 	max-width: 37.5%;
 	flex-basis: 37.5%;
+}
+.size-2 {
+	max-width: 43.75%;
+	flex-basis: 43.75%;
+}
+.text-cell {
 	.label {
 		font-size: 0.75rem;
 	}
@@ -43,8 +49,6 @@
 	}
 }
 .image-cell {
-	max-width: 43.75%;
-	flex-basis: 43.75%;
 	margin-left: 6.25%;
 	order: 0;
 	height: auto;
@@ -63,11 +67,13 @@
 			width: auto !important;
 			.sqs-block {
 				height: auto;
+				position: relative;
 				.photo {
 					box-shadow: 0 18px 24px rgba(0, 0, 0, 0.06);
 					overflow: hidden;
 					position: relative;
 					width: 100%;
+					background-size: cover;
 				}
 				.frame {
 					color: white;
@@ -82,7 +88,7 @@
 					.frame-side-bottom,
 					.frame-side-right,
 					.frame-side-left {
-						color: white;
+						background-color: white;
 					}
 					.frame-side-top {
 						top: 20px;
@@ -97,7 +103,6 @@
 						left: 20px;
 						right: 20px;
 						position: absolute;
-						width: 100%;
 					}
 					.frame-side-left {
 						left: 20px;
@@ -105,7 +110,6 @@
 						top: 20px;
 						width: 2px;
 						position: absolute;
-						height: 100%;
 					}
 					.frame-side-right {
 						right: 20px;
@@ -113,30 +117,34 @@
 						top: 20px;
 						width: 2px;
 						position: absolute;
-						height: 100%;
-						.frame-part-one {
-							bottom: calc(100% - 30% - var(--frame-break, 0) * 30%);
-							top: 0;
-							left: 0;
-							right: 0;
-							transition:
-								top 800ms ease-out,
-								bottom 800ms ease-out;
-							position: absolute;
-						}
-						.frame-part-two {
-							bottom: 0;
-							top: calc(var(--frame-break, 0) * 30% + 30% + 10%);
-							left: 0;
-							right: 0;
-							transition:
-								top 800ms ease-out,
-								bottom 800ms ease-out;
-							position: absolute;
-						}
 					}
 				}
 			}
 		}
+	}
+}
+.button {
+	position: relative;
+	display: block;
+	color: white;
+	background-image: linear-gradient(
+		transparent 0,
+		white 0,
+		white 100%,
+		transparent 100%
+	);
+	background-size: 0 100%;
+	background-repeat: no-repeat;
+	display: block;
+	transition: 0.5s ease;
+	text-transform: lowercase;
+	white-space: nowrap;
+	width: fit-content;
+	padding: 1rem 2rem;
+	margin: 2rem 0;
+	cursor: pointer;
+	&:hover {
+		background-size: 100% 100%;
+		color: black;
 	}
 }

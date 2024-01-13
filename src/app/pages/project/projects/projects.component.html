@@ -1,34 +1,47 @@
 <div class="page-container">
-	<div class="grid">
-		<div class="grid-cell">
-			<div class="text-cell">
-				<div class="label">Project #1</div>
-				<div class="title">
-					<h1>Title</h1>
-				</div>
-				<div class="description">
-					<p>Description</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="grid-cell">
+	<div class="grid" *ngFor="let project of projects; let i = index">
+		<div class="grid-cell size-2" *ngIf="i % 2 !== 0">
 			<div class="image-cell">
 				<div class="image-container">
 					<div class="col-1">
 						<div class="sqs-block">
-							<img
-								class="photo"
-								src="https://images.squarespace-cdn.com/content/v1/57c6b79629687fde090a0fdd/1586548234873-YFBVOENEOT99N3R18HM3/dhomepagestudent1500.jpg?format=1500w"
-							/>
-							<div class="frame">
+							<img class="photo" src="{{ project.attributes.cover_image }}" />
+							<div class="frame" style="--frame-break: 2">
 								<div class="frame-side-top"></div>
-								<div class="frame-side-right">
-									<div class="frame-part-one"></div>
-									<div class="frame-part-two"></div>
-								</div>
-								<div class="frame-side-bottom"></div>
 								<div class="frame-side-right"></div>
+								<div class="frame-side-bottom"></div>
+								<div class="frame-side-left"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid-cell size-1">
+			<div class="text-cell">
+				<div class="label">Project #{{ project.id }}</div>
+				<div class="title">
+					<h1>{{ project.attributes.title }}</h1>
+				</div>
+				<div class="description">
+					<p>{{ project.attributes.description }}</p>
+				</div>
+				<a (click)="navigateToProject(project.id)" class="button">
+					Learn More
+				</a>
+			</div>
+		</div>
+		<div class="grid-cell size-2" *ngIf="i % 2 === 0">
+			<div class="image-cell">
+				<div class="image-container">
+					<div class="col-1">
+						<div class="sqs-block">
+							<img class="photo" src="{{ project.attributes.cover_image }}" />
+							<div class="frame" style="--frame-break: 2">
+								<div class="frame-side-top"></div>
+								<div class="frame-side-right"></div>
+								<div class="frame-side-bottom"></div>
+								<div class="frame-side-left"></div>
 							</div>
 						</div>
 					</div>

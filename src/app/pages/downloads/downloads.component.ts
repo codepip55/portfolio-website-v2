@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { StrapiService } from 'src/app/services/strapi.service';
 
 @Component({
 	selector: 'app-downloads',
@@ -8,4 +9,15 @@ import { CommonModule } from '@angular/common';
 	templateUrl: './downloads.component.html',
 	styleUrl: './downloads.component.scss',
 })
-export class DownloadsComponent {}
+export class DownloadsComponent implements OnInit {
+	constructor(private strapiService: StrapiService) {}
+
+	public downloads: any[] = [];
+
+	ngOnInit(): void {
+		this.strapiService.getDownloads().subscribe((res: any) => {
+			this.downloads = res.data;
+			console.log(res.data);
+		});
+	}
+}

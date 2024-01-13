@@ -1,0 +1,99 @@
+.downloads {
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		margin: 10px auto;
+	}
+	.header {
+		font-size: 3.5rem;
+		margin-left: 6.25%;
+		font-weight: 100;
+	}
+}
+.card {
+	flex: 0 0 auto;
+	padding: 20px;
+	display: inline-block;
+	list-style-type: none;
+	text-align: match-parent;
+	margin-left: 6.25%;
+	.card-wrap {
+		background: white;
+		box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+		width: 300px;
+		.card-image {
+			background: #666 no-repeat center;
+			background-size: cover;
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		.card-content {
+			background: white;
+			display: flex;
+			flex-direction: column;
+			margin: 20px;
+			padding: 1.8em 2em;
+			position: relative;
+			white-space: normal;
+			.card-tag {
+				color: black;
+				margin-top: 0;
+				letter-spacing: 0.05em;
+				display: block;
+				font-size: 0.72rem;
+				font-weight: 600;
+				margin-bottom: 1em;
+				text-transform: uppercase;
+			}
+			.card-title {
+				color: black;
+				display: block;
+				font-size: 1.5em;
+				margin-block-start: 0.83em;
+				margin-block-end: 0.83em;
+				margin-inline-start: 0px;
+				margin-inline-end: 0px;
+				font-weight: bold;
+			}
+			.card-excerpt {
+				color: black;
+				margin: 0.6em 0 auto;
+				p {
+					display: block;
+					margin-block-start: 1em;
+					margin-block-end: 1em;
+					margin-inline-start: 0px;
+					margin-inline-end: 0px;
+				}
+			}
+			.card-link {
+				margin-top: 0.8em;
+				color: #ff4337;
+				font-size: 0.78rem;
+				font-weight: 700;
+				text-decoration: none;
+				cursor: pointer;
+			}
+		}
+	}
+}
+@media (min-width: 750px) {
+	.card {
+		.card-wrap {
+			width: 600px;
+			.card-image {
+				right: 65%;
+			}
+			.card-content {
+				margin: 20px 20px 20px 28%;
+				min-height: 260px;
+			}
+		}
+	}
+}

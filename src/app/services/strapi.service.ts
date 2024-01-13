@@ -23,18 +23,39 @@ export class StrapiService {
 			);
 	}
 	getBlogs() {
-		return this.http.get(`${this.cmsUrl}/blogs?populate=*`).pipe(
-			catchError((err) => this.handleError(err, { blogs: null }, 'get blogs')),
-		);
+		return this.http
+			.get(`${this.cmsUrl}/blogs?populate=*`)
+			.pipe(
+				catchError((err) =>
+					this.handleError(err, { blogs: null }, 'get blogs'),
+				),
+			);
 	}
 	getProject(id: string) {
-		return this.http.get(`${this.cmsUrl}/projects/${id}?populate=*`).pipe(
-			catchError((err) => this.handleError(err, { project: null }, 'get project')),
-		);
+		return this.http
+			.get(`${this.cmsUrl}/projects/${id}?populate=*`)
+			.pipe(
+				catchError((err) =>
+					this.handleError(err, { project: null }, 'get project'),
+				),
+			);
 	}
 	getProjects() {
-		return this.http.get(`${this.cmsUrl}/projects?populate=*`).pipe(
-			catchError((err) => this.handleError(err, { projects: null }, 'get projects')),
-		);
+		return this.http
+			.get(`${this.cmsUrl}/projects?populate=*`)
+			.pipe(
+				catchError((err) =>
+					this.handleError(err, { projects: null }, 'get projects'),
+				),
+			);
+	}
+	getDownloads() {
+		return this.http
+			.get(`${this.cmsUrl}/downloads?populate=*`)
+			.pipe(
+				catchError((err) =>
+					this.handleError(err, { downloads: null }, 'get downloads'),
+				),
+			);
 	}
 }

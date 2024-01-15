@@ -83,7 +83,29 @@
 		}
 	}
 }
-@media (min-width: 750px) {
+@media (max-width: 1420px) {
+	.card .card-wrap {
+		width: 450px;
+	}
+}
+@media (max-width: 1150px) {
+	.downloads .grid {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+}
+@media (max-width: 920px) {
+	.card .card-wrap {
+		width: 300px;
+	}
+	.downloads .header-bg .header {
+		font-size: 2rem;
+		text-align: center;
+	}
+	:host {
+		margin-bottom: 80px;
+	}
+}
+@media (min-width: 1420px) {
 	.card {
 		.card-wrap {
 			width: 600px;
@@ -97,3 +119,4 @@
 		}
 	}
 }
+

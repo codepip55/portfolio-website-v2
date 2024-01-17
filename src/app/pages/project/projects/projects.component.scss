@@ -1,3 +1,6 @@
+:host {
+	width: 100%;
+}
 .page-container {
 	max-width: 80%;
 	margin: 3rem auto;
@@ -147,5 +150,33 @@
 	&:hover {
 		background-size: 100% 100%;
 		color: black;
+	}
+}
+@media (max-width: 1420px) {
+	.text-cell {
+		.title {
+			h1 {
+				font-size: 4rem;
+			}
+		}
+	}
+}
+@media (max-width: 1000px) {
+	.page-container .grid {
+		display: block;
+	}
+	.size-1 {
+		max-width: 80%;
+		flex-basis: 80%;
+	}
+	.size-2 {
+		max-width: 80%;
+		flex-basis: 80%;
+	}
+	.image-cell {
+		display: none;
+	}
+	:host {
+		margin-bottom: 80px;
 	}
 }

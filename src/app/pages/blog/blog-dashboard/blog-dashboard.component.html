@@ -4,63 +4,41 @@
 	</div>
 
 	<div class="grid">
-		<app-loader size="lg" *ngIf="loading"></app-loader>
-		<div class="blog-post" (click)="navigateToBlog(blogPosts[0].id)">
-			<img
-				src="{{ blogPosts[0].attributes.cover_image }}"
-				alt=""
-				class="cover-image"
-			/>
-			<div class="text">
-				<div class="title">
-					<mark>{{ blogPosts[0].attributes.title }}</mark>
-				</div>
-				<div class="published-on">
-					Published on
-					{{ blogPosts[0].attributes.publishedAt | date: "EEEE, MMMM d, y" }}
-				</div>
-				<div class="body">{{ blogPosts[0].attributes.body | htmlStrip }}</div>
-
-				<span class="read-more">
-					read more
+		@if (loading) {
+			<app-loader size="lg"></app-loader>
+		}
+		<div class="">
+			@for (
+				blog of blogPosts;
+				track blog.attributes.title;
+				let first = $first
+			) {
+				<div class="blog-post" (click)="navigateToBlog(blog.id)">
 					<img
-						src="../../../../assets/svg/icons/arrow-right-solid.svg"
-						alt="read-more-arrow"
+						src="{{ blog.attributes.cover_image }}"
+						alt=""
+						class="cover-image"
 					/>
-				</span>
-			</div>
-		</div>
+					<div class="text">
+						<div class="title">
+							<mark>{{ blog.attributes.title }}</mark>
+						</div>
+						<div class="published-on">
+							Published on
+							{{ blog.attributes.publishedAt | date: "EEEE, MMMM d, y" }}
+						</div>
+						<div class="body">{{ blog.attributes.body | htmlStrip }}</div>
 
-		<div class="blog-grid">
-			<div
-				class="blog-post"
-				*ngFor="let blog of blogPosts | slice: 1"
-				(click)="navigateToBlog(blog.id)"
-			>
-				<img
-					src="{{ blog.attributes.cover_image }}"
-					alt=""
-					class="cover-image"
-				/>
-				<div class="text">
-					<div class="title">
-						<mark>{{ blog.attributes.title }}</mark>
+						<span class="read-more">
+							read more
+							<img
+								src="../../../../assets/svg/icons/arrow-right-solid.svg"
+								alt="read-more-arrow"
+							/>
+						</span>
 					</div>
-					<div class="published-on">
-						Published on
-						{{ blog.attributes.publishedAt | date: "EEEE, MMMM d, y" }}
-					</div>
-					<div class="body">{{ blog.attributes.body | htmlStrip }}</div>
-
-					<span class="read-more">
-						read more
-						<img
-							src="../../../../assets/svg/icons/arrow-right-solid.svg"
-							alt="read-more-arrow"
-						/>
-					</span>
 				</div>
-			</div>
+			}
 		</div>
 	</div>
 </div>

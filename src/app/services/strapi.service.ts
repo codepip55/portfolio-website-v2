@@ -1,17 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of } from 'rxjs';
+import { EventsService } from './events.service';
+import { EventServiceTriggers } from '../models/EventServiceTriggers';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class StrapiService {
-	constructor(private http: HttpClient) {}
+	constructor(
+		private http: HttpClient,
+		private eventsService: EventsService,
+	) {}
 
 	private cmsUrl: string = 'https://cms-staging.pepijncolenbrander.com/api';
 
 	private handleError<T>(err: any, res: T, action: string): Observable<T> {
 		console.error(err);
+		this.eventsService.broadcast(
+			EventServiceTriggers.NEW_ALERT,
+			'danger',
+			`Failed to ${action}`,
+		);
 		return of(res);
 	}
 

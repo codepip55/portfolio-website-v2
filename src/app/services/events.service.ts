@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { from, Subject } from 'rxjs';
+import { EventServiceTriggers } from '../models/EventServiceTriggers';
 
 @Injectable({
 	providedIn: 'root',
@@ -25,7 +26,7 @@ export class EventsService {
 	}
 
 	// Store events
-	on(name: string, listener: any) {
+	on(name: EventServiceTriggers, listener: any) {
 		if (!this.listeners[name]) {
 			this.listeners[name] = [];
 		}
@@ -34,7 +35,7 @@ export class EventsService {
 	}
 
 	// Fire events
-	broadcast(name: string, ...args: any) {
+	broadcast(name: EventServiceTriggers, ...args: any) {
 		this.eventsSubject.next({
 			name,
 			args,

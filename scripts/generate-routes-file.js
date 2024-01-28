@@ -2,7 +2,7 @@ const fs = require("fs");
 
 // Config
 const config = {
-	cmsUrl: "https://cms-staging.pepijncolenbrander.com/api",
+	cmsUrl: "https://cms.pepijncolenbrander.com/api",
 };
 
 async function getAllBlogs() {

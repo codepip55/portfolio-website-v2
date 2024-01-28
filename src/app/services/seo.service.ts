@@ -27,7 +27,7 @@ export class SeoService {
 				{ name: 'twitter:card', content: 'summary_large_image' },
 				{
 					name: 'twiter:url',
-					content: `https://staging.pepijncolenbrander.com${this.router.url}`,
+					content: `https://pepijncolenbrander.com${this.router.url}`,
 				},
 				{ name: 'twitter:title', content: title },
 				{ name: 'twitter:description', content: description },

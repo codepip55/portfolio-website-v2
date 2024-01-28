@@ -13,7 +13,7 @@ export class StrapiService {
 		private eventsService: EventsService,
 	) {}
 
-	private cmsUrl: string = 'https://cms-staging.pepijncolenbrander.com/api';
+	private cmsUrl: string = 'https://cms.pepijncolenbrander.com/api';
 
 	private handleError<T>(err: any, res: T, action: string): Observable<T> {
 		console.error(err);

@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ImageUrlPipe implements PipeTransform {
 	transform(value: string): string {
-		const baseUrl = 'https://cms-staging.pepijncolenbrander.com';
+		const baseUrl = 'https://cms.pepijncolenbrander.com';
 
 		// Match img tags
 		const imgRegex = /<img[^>]*src="([^"]*)"[^>]*>/g;

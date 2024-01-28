@@ -15,11 +15,11 @@
 			"prefix": "app",
 			"architect": {
 				"build": {
-					"builder": "@angular-devkit/build-angular:browser",
+					"builder": "@angular-devkit/build-angular:application",
 					"options": {
-						"outputPath": "dist/portfolio-website-v2",
+						"outputPath": "dist/portfolio-website-v2/",
 						"index": "src/index.html",
-						"main": "src/main.ts",
+						"browser": "src/main.ts",
 						"polyfills": ["zone.js"],
 						"tsConfig": "tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
@@ -32,21 +32,19 @@
 							"budgets": [
 								{
 									"type": "initial",
-									"maximumWarning": "500kb",
-									"maximumError": "1mb"
+									"maximumWarning": "1000kb",
+									"maximumError": "2mb"
 								},
 								{
 									"type": "anyComponentStyle",
-									"maximumWarning": "2kb",
-									"maximumError": "4kb"
+									"maximumWarning": "3kb",
+									"maximumError": "5kb"
 								}
 							],
 							"outputHashing": "all"
 						},
 						"development": {
-							"buildOptimizer": false,
 							"optimization": false,
-							"vendorChunk": true,
 							"extractLicenses": false,
 							"sourceMap": true,
 							"namedChunks": true
@@ -58,10 +56,10 @@
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "portfolio-website-v2:build:production"
+							"buildTarget": "portfolio-website-v2:build:production"
 						},
 						"development": {
-							"browserTarget": "portfolio-website-v2:build:development"
+							"buildTarget": "portfolio-website-v2:build:development"
 						}
 					},
 					"defaultConfiguration": "development"
@@ -69,7 +67,7 @@
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
 					"options": {
-						"browserTarget": "portfolio-website-v2:build"
+						"buildTarget": "portfolio-website-v2:build"
 					}
 				},
 				"test": {
@@ -82,8 +80,65 @@
 						"styles": ["src/styles.scss"],
 						"scripts": []
 					}
+				},
+				"server": {
+					"builder": "@angular-devkit/build-angular:server",
+					"options": {
+						"outputPath": "dist/portfolio-website-v2/server",
+						"main": "server.ts",
+						"tsConfig": "tsconfig.server.json",
+						"inlineStyleLanguage": "scss"
+					},
+					"configurations": {
+						"production": {
+							"outputHashing": "media"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"sourceMap": true,
+							"extractLicenses": false,
+							"vendorChunk": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve-ssr": {
+					"builder": "@angular-devkit/build-angular:ssr-dev-server",
+					"configurations": {
+						"development": {
+							"browserTarget": "portfolio-website-v2:build:development",
+							"serverTarget": "portfolio-website-v2:server:development"
+						},
+						"production": {
+							"browserTarget": "portfolio-website-v2:build:production",
+							"serverTarget": "portfolio-website-v2:server:production"
+						}
+					},
+					"defaultConfiguration": "development"
+				},
+				"prerender": {
+					"builder": "@angular-devkit/build-angular:prerender",
+					"options": {
+						"routes": ["/"],
+						"routesFile": "routes.txt"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "portfolio-website-v2:build:production",
+							"serverTarget": "portfolio-website-v2:server:production"
+						},
+						"development": {
+							"browserTarget": "portfolio-website-v2:build:development",
+							"serverTarget": "portfolio-website-v2:server:development"
+						}
+					},
+					"defaultConfiguration": "production"
 				}
 			}
 		}
+	},
+	"cli": {
+		"analytics": false
 	}
 }

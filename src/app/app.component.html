@@ -1,15 +1,5 @@
-<ng-container *ngIf="!loading; else loader">
-	<div class="fadein-animation text-selectable relative">
-		<app-header></app-header>
-		<div class="container">
-			<router-outlet></router-outlet>
-			<app-scroll-to-top></app-scroll-to-top>
-		</div>
-	</div>
-</ng-container>
-
-<ng-template #loader>
-	<div class="loader">
-		<app-spinner></app-spinner>
-	</div>
-</ng-template>
+<app-alerts></app-alerts>
+<div class="parent-view">
+	<app-navbar></app-navbar>
+	<router-outlet></router-outlet>
+</div>

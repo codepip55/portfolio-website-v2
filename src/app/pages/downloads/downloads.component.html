@@ -1,0 +1,33 @@
+<div class="downloads">
+	<div class="header-bg">
+		<h1 class="header">Some tools <strong>for you.</strong></h1>
+	</div>
+	<div class="grid">
+		@for (download of downloads; track download.attributes.title) {
+			<div class="card">
+				<div class="card-wrap">
+					<div
+						class="card-image"
+						style="background-image: linear-gradient(to top, rgba(0, 0, 0, .4) 0, rgba(0, 0, 0, .4) 100%), url('{{
+							download.attributes.image
+						}}');"
+					></div>
+					<div class="card-content">
+						<div class="card-tag">{{ download.attributes.tag }}</div>
+						<h2 class="card-title">{{ download.attributes.title }}</h2>
+						<div class="card-excerpt">
+							<p>{{ download.attributes.excerpt }}</p>
+						</div>
+						<a
+							href="{{ download.attributes.url }}"
+							target="_blank"
+							class="card-link"
+						>
+							Download
+						</a>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+</div>

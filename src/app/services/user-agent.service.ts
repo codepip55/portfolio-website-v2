@@ -26,3 +26,4 @@ export class UserAgentService {
 		return DeviceType.Desktop;
 	}
 }
+

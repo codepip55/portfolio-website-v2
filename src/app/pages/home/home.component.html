@@ -1,155 +1,64 @@
-<div class="page-top">
-	<div class="vertical-align">
-		<div class="content">
-			<h1>{{ homeData.title }}</h1>
-			<p>{{ homeData.description }}</p>
-		</div>
+<div class="home-container">
+	<div class="titles">
+		<div class="name">Pepijn</div>
+		<div class="name colenbrander">Colenbrander</div>
+		<div class="developer">Full stack developer</div>
 	</div>
 
-	<div class="my-work" (click)="scrollToBottom()">
-		<p>My Experience</p>
-		<img src="assets/svg/icons/chevron-down.svg" class="animation" />
-	</div>
+	<app-window width="736px" height="473px" class="main-window">
+		<div class="text-container">
+			<div class="turning-your">Turning your</div>
+			<img
+				src="../../../assets/svg/icons/ideas-arrow.svg"
+				alt="ideas-arrow"
+				class="ideas-arrow"
+			/>
+			<div class="ideas">ideas</div>
+			<div class="into-digital">into digital</div>
+			<img
+				src="../../../assets/svg/icons/reality-arrow.svg"
+				alt="reality-arrow"
+				class="reality-arrow"
+			/>
+			<div class="reality">reality</div>
+		</div>
+	</app-window>
 </div>
 
-<ng-container *ngIf="type === 'desktop'; else mobile">
-	<div class="page">
-		<div class="hover-area">
-			<div class="card">
-				<ul class="card-content">
-					<li
-						*ngFor="let language of frontend"
-						(click)="open('language-info', language.slug)"
-					>
-						{{ language.name }}
-					</li>
-				</ul>
-				<p>Frontend</p>
-			</div>
+<!-- Mobile -->
+<div class="mobile">
+	<div class="text">
+		<h1>Pepijn</h1>
+		<h1>Colenbrander</h1>
+		<p>Full stack developer</p>
+	</div>
+	<div class="grid">
+		<div class="bordered-box neutral small less-padding">
+			<a href="/projects" class="box-content">
+				<h4 class="box-title">Projects</h4>
+				<div class="box-excerpt">
+					Read more about the type of projects I do (and learn from my
+					mistakes).
+				</div>
+			</a>
 		</div>
-		<div class="hover-area">
-			<div class="card">
-				<ul class="card-content">
-					<li
-						*ngFor="let language of database"
-						(click)="open('language-info', language.slug)"
-					>
-						{{ language.name }}
-					</li>
-				</ul>
-				<p>Database</p>
-			</div>
-		</div>
-		<div class="hover-area">
-			<div class="card">
-				<ul class="card-content">
-					<li
-						*ngFor="let language of backend"
-						(click)="open('language-info', language.slug)"
-					>
-						{{ language.name }}
-					</li>
-				</ul>
-				<p>Backend</p>
-			</div>
+		<div class="bordered-box neutral small">
+			<a href="/downloads" class="box-content">
+				<h4 class="box-title">Downloads</h4>
+				<div class="box-excerpt">
+					Want to know more about me or my website? Find my resume and other
+					documents here!
+				</div>
+			</a>
 		</div>
 	</div>
-</ng-container>
-
-<ng-template #mobile>
-	<div class="page">
-		<div class="icon-grid">
-			<div class="database" (click)="openType('database')">
-				<img src="assets/svg/icons/database.svg" />
+	<div class="bordered-box" style="margin-top: 40px">
+		<a href="/blog" class="box-content">
+			<h4 class="box-title">Blogs</h4>
+			<div class="box-excerpt">
+				Looking for some tips or some codingadventure stories to tell your kids
+				at bedtime? Look here!
 			</div>
-			<div class="frontend" (click)="openType('frontend')">
-				<img src="assets/svg/icons/frontend.svg" />
-			</div>
-			<div class="backend" (click)="openType('backend')">
-				<img src="assets/svg/icons/backend.svg" />
-			</div>
-		</div>
+		</a>
 	</div>
-</ng-template>
-
-<app-modal id="language-info" size="xl">
-	<div class="modal-wrapper">
-		<div>
-			<div class="modal-language">
-				{{ language }}
-			</div>
-			<div>
-				{{ description }}
-			</div>
-		</div>
-		<div class="projects" *ngIf="projects.length > 0">
-			<div class="title">Projects</div>
-			<div class="projects-grid">
-				<ng-container *ngFor="let project of projects">
-					<div class="project-card">
-						<a
-							(click)="project.link ? openLink(project.link) : preventDefault()"
-							[ngStyle]="{ cursor: project.link ? 'pointer' : '' }"
-						>
-							<div>{{ project.title }}</div>
-						</a>
-					</div>
-				</ng-container>
-			</div>
-		</div>
-	</div>
-</app-modal>
-
-<app-modal id="frontend" size="xl">
-	<div class="mobile-modal">
-		<div class="modal-title modal-language">
-			<div>Frontend</div>
-		</div>
-		<div class="list">
-			<ul class="card-content mobile-card-content">
-				<li
-					*ngFor="let language of frontend"
-					(click)="mobileOpen('language-info', language.slug, 'frontend')"
-				>
-					{{ language.name }}
-				</li>
-			</ul>
-		</div>
-	</div>
-</app-modal>
-
-<app-modal id="database" size="xl">
-	<div class="mobile-modal">
-		<div class="modal-title modal-language">
-			<div>Database</div>
-		</div>
-		<div class="list">
-			<ul class="card-content mobile-card-content">
-				<li
-					*ngFor="let language of database"
-					(click)="mobileOpen('language-info', language.slug, 'database')"
-				>
-					{{ language.name }}
-				</li>
-			</ul>
-		</div>
-	</div>
-</app-modal>
-
-<app-modal id="backend" size="xl">
-	<div class="mobile-modal">
-		<div class="modal-title modal-language">
-			<div>Backend</div>
-		</div>
-		<div class="list">
-			<ul class="card-content mobile-card-content">
-				<li
-					*ngFor="let language of backend"
-					(click)="mobileOpen('language-info', language.slug, 'backend')"
-				>
-					{{ language.name }}
-				</li>
-			</ul>
-		</div>
-	</div>
-</app-modal>
+</div>

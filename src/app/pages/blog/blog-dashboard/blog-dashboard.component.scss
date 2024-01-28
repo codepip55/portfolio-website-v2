@@ -102,3 +102,64 @@ mark {
 	);
 	color: #000;
 }
+// Responsive
+@media screen and (max-width: 768px) {
+	:host {
+		width: 90%;
+		margin: 10px auto;
+	}
+	.dashboard-container {
+		.header h1 {
+			font-size: 2rem;
+		}
+	}
+	.blog-post {
+		flex-direction: column;
+		.cover-image {
+			width: 100%;
+			margin: 0;
+			img {
+				height: 100%;
+			}
+		}
+		.text {
+			width: 100%;
+			margin: 0;
+			padding: 0 0 2rem 0;
+			.title mark {
+				font-size: 1.5rem;
+			}
+			.body {
+				font-size: 1rem;
+			}
+			.read-more {
+				width: 100%;
+				margin: 0;
+				margin-top: 20px;
+				img {
+					margin-left: 0;
+					font-size: 1rem;
+				}
+			}
+		}
+		&:first-child {
+			min-height: 350px;
+			.text .title mark {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+// Responsive
+@media screen and (max-width: 500px) {
+	.blog-post {
+		.text {
+			.title {
+				font-size: 0.5rem;
+			}
+			.body {
+				font-size: 0.75rem;
+			}
+		}
+	}
+}

@@ -22,7 +22,6 @@ export class ErrorComponent {
 		this.eventsService.on(
 			EventServiceTriggers.NEW_ALERT,
 			(type: string, message: string) => {
-				console.log('Received alert', type, message);
 				this.addAlert(type, message);
 			},
 		);
@@ -30,8 +29,16 @@ export class ErrorComponent {
 
 	// Add alert to array
 	addAlert(type: string, message: string) {
-		console.log('Adding alert', type, message);
 		this.alerts.push({ type, message });
+		// Close alert after 5 seconds
+		this.closeAlert(this.alerts[this.alerts.length - 1]);
+	}
+
+	// Remove alert after 5 seconds
+	closeAlert(alert: any) {
+		setTimeout(() => {
+			this.close(alert);
+		}, 5000);
 	}
 
 	// Remove alert from array

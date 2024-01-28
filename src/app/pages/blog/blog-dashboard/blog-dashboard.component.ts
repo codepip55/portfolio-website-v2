@@ -4,6 +4,7 @@ import { StrapiService } from 'src/app/services/strapi.service';
 import { Router } from '@angular/router';
 import { StripHtmlPipe } from 'src/app/pipes/strip-html.pipe';
 import { LoaderComponent } from 'src/app/components/loader/loader.component';
+import { SeoService } from '../../../services/seo.service';
 
 @Component({
 	selector: 'app-blog-dashboard',
@@ -16,6 +17,7 @@ export class BlogDashboardComponent implements OnInit {
 	constructor(
 		private strapiService: StrapiService,
 		private router: Router,
+		private seoService: SeoService,
 	) {}
 
 	public blogPosts: any[] = [];
@@ -36,6 +38,12 @@ export class BlogDashboardComponent implements OnInit {
 		});
 
 		this.loading = false;
+
+		this.seoService.generateTags(
+			'Blog',
+			'Read my blog posts.',
+			'https://clickfirstmarketing.com/wp-content/uploads/Purpose-of-Blogging.jpeg',
+		);
 	}
 
 	public navigateToBlog(id: string) {

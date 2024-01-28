@@ -51,3 +51,20 @@ mark {
 	);
 	color: #000;
 }
+// Responsive
+@media screen and (max-width: 768px) {
+	:host {
+		width: 100%;
+	}
+	.blog-container {
+		width: 100%;
+		.blog-text {
+			width: 90%;
+			margin: auto;
+			margin-bottom: 80px;
+			.title {
+				font-size: clamp(2rem, 2vw, 6rem);
+			}
+		}
+	}
+}

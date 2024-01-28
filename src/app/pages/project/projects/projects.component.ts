@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StrapiService } from 'src/app/services/strapi.service';
 import { Router } from '@angular/router';
+import { SeoService } from '../../../services/seo.service';
 
 @Component({
 	selector: 'app-projects',
@@ -14,6 +15,7 @@ export class ProjectsComponent implements OnInit {
 	constructor(
 		private strapiService: StrapiService,
 		private router: Router,
+		private seoService: SeoService,
 	) {}
 
 	public projects: any[] = [];
@@ -34,6 +36,12 @@ export class ProjectsComponent implements OnInit {
 		});
 
 		this.loading = false;
+
+		this.seoService.generateTags(
+			'Projects',
+			'View my projects.',
+			'https://www.rc.virginia.edu/images/accord/project.png',
+		);
 	}
 
 	public navigateToProject(id: string) {

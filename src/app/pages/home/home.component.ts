@@ -17,7 +17,7 @@ export class HomeComponent {
 		this.seoService.generateTags(
 			'Pepijn Colenbrander',
 			'Pepijn Colenbrander is a full-stack developer from the Netherlands.',
-			'https://cms-staging.pepijncolenbrander.com/uploads/working_at_peek_22c9d9b659.jpeg',
+			'https://cms.pepijncolenbrander.com/uploads/working_at_peek_22c9d9b659.jpeg',
 		);
 	}
 }

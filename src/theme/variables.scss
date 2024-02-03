@@ -1,18 +1,16 @@
-:root {
-	--color-primary: #3183ff;
-	--color-secondary: #1ae986;
-	--color-accent: #fde68a;
-	--color-neutral: #f3f4f6;
-	--color-base-100: #ffffff;
-	--color-info: #60a5fa;
-	--color-success: #77ffa9;
-	--color-warning: #fbbf24;
-	--color-error: #f87171;
-	--color-gray: #888a8f;
-
-	--color-primary-dark: #1e1e1e;
-	--color-secondary-dark: #212121;
-	--color-accent-dark: #2b2b2b;
-
-	--body-width: calc(100vw - 121px);
-}
+$themes: (
+	light: (
+		text: #000000,
+		background: #e0e0e0,
+		primary: #33e15b,
+		secondary: #147a9f,
+		accent: #0054ad,
+	),
+	dark: (
+		text: #ffffff,
+		background: #1f1f1f,
+		primary: #1ecc47,
+		secondary: #60c6eb,
+		accent: #52a5ff,
+	),
+);

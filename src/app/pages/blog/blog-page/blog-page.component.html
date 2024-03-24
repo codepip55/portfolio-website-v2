@@ -1,0 +1,18 @@
+<div class="blog-container">
+	<div class="blog-hero">
+		<img src="{{ blog.data.attributes.cover_image }}" alt="" />
+		<div class="image-cover"></div>
+	</div>
+	<div class="blog-text">
+		@if (!loading) {
+			<a href="/blog" class="return-link"><mark>Return to dashboard</mark></a>
+			<div class="title">{{ blog.data.attributes.title }}</div>
+			<div
+				class="body ck-content"
+				[innerHTML]="blog.data.attributes.body | imageUrl"
+			></div>
+		} @else {
+			<app-loader size="md"></app-loader>
+		}
+	</div>
+</div>

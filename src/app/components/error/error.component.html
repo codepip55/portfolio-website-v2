@@ -1,0 +1,32 @@
+<div class="alert-grid">
+	@for (alert of alerts; track alert.type; let idx = $index) {
+		<div class="alert">
+			<div class="alert-icon">
+				@switch (alert.type) {
+					@case ("danger") {
+						<i class="fa-solid fa-triangle-exclamation"></i>
+					}
+					@case ("warning") {
+						<i class="fa-solid fa-warning"></i>
+					}
+					@case ("success") {
+						<i class="fa-solid fa-check"></i>
+					}
+					@case ("info") {
+						<i class="fa-solid fa-info"></i>
+					}
+					@default {
+						<i class="fa-solid fa-triangle-exclamation"></i>
+					}
+				}
+			</div>
+			<div class="alert-text">
+				<div class="alert-title">{{ alert.type }}</div>
+				<div class="alert-message">{{ alert.message }}</div>
+			</div>
+			<div class="alert-close" (click)="close(idx)">
+				<i class="fa-solid fa-xmark"></i>
+			</div>
+		</div>
+	}
+</div>

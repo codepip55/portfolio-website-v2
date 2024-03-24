@@ -1,39 +1,59 @@
 {
 	"name": "portfolio-website-v2",
-	"version": "1.3.0",
+	"version": "3.0.0",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
 		"build": "ng build",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test",
-		"bump-version": "node ./scripts/bump-version.js"
+		"bump-version": "node ./scripts/bump-version.js",
+		"dev:ssr": "ng run portfolio-website-v2:serve-ssr",
+		"serve:ssr": "node dist/portfolio-website-v2/server/main.js",
+		"build:ssr": "ng build && ng run portfolio-website-v2:server",
+		"prerender": "node scripts/generate-routes-file.js && ng run portfolio-website-v2:prerender",
+		"prepare": "husky install",
+		"prepare:ssr": "npm run build:ssr && ng run portfolio-website-v2:prerender",
+		"develop": "npm run build:ssr && npm run prerender && npm run dev:ssr",
+		"start:ssr": "npm run build:ssr && npm run prerender && npm run serve:ssr",
+		"reinstall": "rm -rf node_modules && npm install"
 	},
 	"private": true,
 	"dependencies": {
-		"@angular/animations": "^16.1.0",
-		"@angular/common": "^16.1.0",
-		"@angular/compiler": "^16.1.0",
-		"@angular/core": "^16.1.0",
-		"@angular/forms": "^16.1.0",
-		"@angular/platform-browser": "^16.1.0",
-		"@angular/platform-browser-dynamic": "^16.1.0",
-		"@angular/router": "^16.1.0",
+		"@angular/animations": "^17.0.9",
+		"@angular/common": "^17.0.9",
+		"@angular/compiler": "^17.0.9",
+		"@angular/core": "^17.0.9",
+		"@angular/forms": "^17.0.9",
+		"@angular/platform-browser": "^17.0.9",
+		"@angular/platform-browser-dynamic": "^17.0.9",
+		"@angular/platform-server": "^17.0.9",
+		"@angular/router": "^17.0.9",
+		"@angular/ssr": "^17.0.10",
+		"express": "^4.18.2",
 		"rxjs": "~7.8.0",
 		"tslib": "^2.3.0",
-		"zone.js": "~0.13.0"
+		"zone.js": "^0.14.2"
 	},
 	"devDependencies": {
-		"@angular-devkit/build-angular": "^16.1.8",
-		"@angular/cli": "~16.1.8",
-		"@angular/compiler-cli": "^16.1.0",
+		"@angular-devkit/build-angular": "^17.0.10",
+		"@angular/cli": "~17.0.10",
+		"@angular/compiler-cli": "^17.0.9",
+		"@types/express": "^4.17.17",
 		"@types/jasmine": "~4.3.0",
+		"@types/node": "^18.18.0",
+		"husky": "^8.0.3",
 		"jasmine-core": "~4.6.0",
 		"karma": "~6.4.0",
 		"karma-chrome-launcher": "~3.2.0",
 		"karma-coverage": "~2.2.0",
 		"karma-jasmine": "~5.1.0",
 		"karma-jasmine-html-reporter": "~2.1.0",
-		"typescript": "~5.1.3"
+		"lint-staged": "^15.1.0",
+		"prettier": "3.1.0",
+		"typescript": "^5.2.2"
+	},
+	"lint-staged": {
+		"**/*": "prettier --write --ignore-unknown"
 	}
 }
